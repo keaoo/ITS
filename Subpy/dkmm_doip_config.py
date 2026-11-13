@@ -1,0 +1,7 @@
+# DKMM (Door Keyless Module) 车门无钥匙进入模块
+DKMM_DOIP_IP = "172.31.6.1"  # ICB 网关
+DKMM_DOIP_PORT = 13400
+DKMM_PHYSICAL_ADDR = 0x07A7
+DKMM_RESPONSE_ADDR = 0x07A7  # 通过 ICB 网关转发，响应地址=请求地址
+DKMM_ROUTING_TA = 0x0000  # 广播到所有 CAN
+DKMM_SECURITY_ALGO = 0x1050

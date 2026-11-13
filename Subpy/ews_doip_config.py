@@ -1,0 +1,7 @@
+# EWS (Electronic Warning System) 电子警告系统
+EWS_DOIP_IP = "172.31.6.1"  # ICB 网关
+EWS_DOIP_PORT = 13400
+EWS_PHYSICAL_ADDR = 0x0787
+EWS_RESPONSE_ADDR = 0x0787  # 通过 ICB 网关转发，响应地址=请求地址
+EWS_ROUTING_TA = 0x0000
+EWS_SECURITY_ALGO = 0x10A8

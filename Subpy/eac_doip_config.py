@@ -1,0 +1,7 @@
+# EAC (Electronic Air Conditioner) 电子空调控制器
+EAC_DOIP_IP = "172.31.6.1"  # ICB 网关
+EAC_DOIP_PORT = 13400
+EAC_PHYSICAL_ADDR = 0x0751
+EAC_RESPONSE_ADDR = 0x0751  # 通过 ICB 网关转发，响应地址=请求地址
+EAC_ROUTING_TA = 0x0000
+EAC_SECURITY_ALGO = 0x104D

@@ -1,0 +1,6 @@
+loopTimeInterval: 30              # 刷新压测模式下，循环间隔时间，单位s
+beforeFlashTimeDelay: 0           # 整车刷新前等待时间，单位s
+beforeMCUFlashTimeDelay: 0        # MCU刷新前等待时间，单位s
+beforeReadLogisticsTimeDelay: 0   # 刷新结束后自动读物流数据前等待时间，单位s
+afterICBMCUFlashDelay: 15         # ICB MCU刷新后等待时长，单位s
+

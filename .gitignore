@@ -1,0 +1,59 @@
+# Python caches and local environments
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+
+# IDE and operating-system files
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Generated build and packaging output
+build/
+dist/
+*.7z
+*.zip
+*.log
+
+# Local secrets and machine-specific runtime state
+key/
+bin/
+dll/
+config/robot.txt
+配置基准文件/ITS_config.json
+配置基准文件/itms_vehicle_catalog.json
+*.sqlite3
+*.db
+
+# Vehicle deployment experiments contain environment-specific endpoints/data.
+Subpy/deploy/
+
+# Bundled executables and generated reference material
+script/8295/adb.exe
+script/8295/AdbWinApi.dll
+script/8295/AdbWinUsbApi.dll
+配置基准文件/visual_reference.jpg
+
+# Development notes and packaging notes are not part of the source release.
+开发逻辑/
+ITS.spec 更新说明.md
+打包脚本生成完成总结.md
+打包指令.txt
+综合测试VAPI指令清单.txt
+
+# Generated or local media
+录音/
+音频/
+*.wav
+*.mp3
+
+# One-off local maintenance helpers
+check_append.py
+find_text_edit.py
+fix_append.py

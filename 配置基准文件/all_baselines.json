@@ -1,0 +1,2398 @@
+{
+  "车窗全开": {
+    "created_at": "2026-05-15 14:35:07",
+    "results": {
+      "主驾车窗": 100,
+      "副驾车窗": 100,
+      "左后车窗": 100,
+      "右后车窗": 100
+    }
+  },
+  "车窗全关": {
+    "created_at": "2026-05-15 14:35:22",
+    "results": {
+      "主驾车窗": 0,
+      "副驾车窗": 0,
+      "左后车窗": 0,
+      "右后车窗": 0
+    }
+  },
+  "车窗通风": {
+    "created_at": "2026-05-13 16:07:16",
+    "results": {
+      "主驾车窗": 12,
+      "副驾车窗": 13,
+      "左后车窗": 12,
+      "右后车窗": 13
+    }
+  },
+  "打开空调": {
+    "created_at": "2026-05-13 16:07:23",
+    "results": {
+      "空调状态": 1
+    }
+  },
+  "关闭空调": {
+    "created_at": "2026-05-13 16:07:30",
+    "results": {
+      "空调状态": 0
+    }
+  },
+  "打开AC": {
+    "created_at": "2026-05-13 12:01:53",
+    "results": {
+      "AC状态": 1
+    }
+  },
+  "关闭AC": {
+    "created_at": "2026-05-13 12:02:00",
+    "results": {
+      "AC状态": 0
+    }
+  },
+  "折叠后视镜": {
+    "created_at": "2026-05-13 12:02:08",
+    "results": {
+      "后视镜状态": 3
+    }
+  },
+  "展开后视镜": {
+    "created_at": "2026-05-13 12:02:16",
+    "results": {
+      "后视镜状态": 4
+    }
+  },
+  "C屏下电": {
+    "created_at": "2026-05-14 12:09:11",
+    "results": {
+      "电源模式状态": 0
+    }
+  },
+  "后视镜折叠": {
+    "created_at": "2026-05-13 12:02:08",
+    "results": {
+      "后视镜状态": 3
+    }
+  },
+  "后视镜展开": {
+    "created_at": "2026-05-13 12:02:16",
+    "results": {
+      "后视镜状态": 4
+    }
+  },
+  "主驾座椅驾驶位置": {
+    "created_at": "2026-05-13 12:02:33",
+    "results": {
+      "前后位置": 43,
+      "上下位置": 54,
+      "抬升位置": 48,
+      "靠背位置": 38
+    }
+  },
+  "主驾座椅进出位置": {
+    "created_at": "2026-05-13 12:02:49",
+    "results": {
+      "前后位置": 92,
+      "上下位置": 1,
+      "抬升位置": 45,
+      "靠背位置": 46
+    }
+  },
+  "主驾座椅其他位置": {
+    "created_at": "2026-05-13 12:03:06",
+    "results": {
+      "前后位置": 92,
+      "上下位置": 7,
+      "抬升位置": 51,
+      "靠背位置": 54
+    }
+  },
+  "主驾座椅加热1档": {
+    "created_at": "2026-05-13 12:03:12",
+    "results": {
+      "主驾座椅加热1档": 1
+    }
+  },
+  "主驾座椅通风1档": {
+    "created_at": "2026-05-13 12:03:19",
+    "results": {
+      "主驾座椅通风1档": 1
+    }
+  },
+  "打开主驾座椅按摩": {
+    "created_at": "2026-05-13 12:03:25",
+    "results": {
+      "主驾座椅通风2档": 1
+    }
+  },
+  "主驾座椅按摩强度-标准": {
+    "created_at": "2026-05-13 12:03:32",
+    "results": {
+      "主驾座椅按摩强度-标准": 2
+    }
+  },
+  "主驾座椅按摩部位-腰（下腰部）": {
+    "created_at": "2026-05-13 12:03:38",
+    "results": {
+      "主驾座椅按摩强度-腰（下腰部）": 2
+    }
+  },
+  "关闭主驾座椅按摩": {
+    "created_at": "2026-05-13 12:03:44",
+    "results": {
+      "主驾座椅通风2档": 1
+    }
+  },
+  "副驾座椅进出位置": {
+    "created_at": "2026-05-13 12:04:02",
+    "results": {
+      "前后位置": 91,
+      "上下位置": 63,
+      "抬升位置": 41,
+      "靠背位置": 2
+    }
+  },
+  "副驾座椅零重力位置": {
+    "created_at": "2026-05-13 12:04:19",
+    "results": {
+      "前后位置": 92,
+      "上下位置": 51,
+      "抬升位置": 63,
+      "靠背位置": 100
+    }
+  },
+  "副驾座椅加热2档": {
+    "created_at": "2026-05-13 12:04:25",
+    "results": {
+      "副驾座椅加热2档": 2
+    }
+  },
+  "副驾座椅通风2档": {
+    "created_at": "2026-05-13 12:04:32",
+    "results": {
+      "副驾座椅通风2档态": 2
+    }
+  },
+  "打开副驾座椅按摩": {
+    "created_at": "2026-05-13 12:04:38",
+    "results": {
+      "副驾座椅按摩开关状态": 1
+    }
+  },
+  "副驾座椅按摩强度-强力": {
+    "created_at": "2026-05-13 12:04:44",
+    "results": {
+      "副驾座椅按摩强度-强力": 1
+    }
+  },
+  "副驾座椅按摩部位-腰（下腰部）": {
+    "created_at": "2026-05-13 12:04:51",
+    "results": {
+      "副驾座椅按摩强度-腰（下腰部）": 2
+    }
+  },
+  "关闭副驾座椅按摩": {
+    "created_at": "2026-05-13 12:04:58",
+    "results": {
+      "副驾座椅按摩开关状态": 0
+    }
+  },
+  "打开后备箱": {
+    "created_at": "2026-05-13 12:05:13",
+    "results": {
+      "尾门开度": 61,
+      "尾门锁状态": 1
+    }
+  },
+  "关闭后备箱": {
+    "created_at": "2026-05-13 12:05:29",
+    "results": {
+      "尾门开度": 0,
+      "尾门锁状态": 0
+    }
+  },
+  "打开轻松通过": {
+    "created_at": "2026-05-13 12:05:57",
+    "results": {
+      "左前高度": 47,
+      "右前高度": 48,
+      "左后高度": 49,
+      "右后高度": 45
+    }
+  },
+  "打开轻松载物": {
+    "created_at": "2026-05-13 12:06:24",
+    "results": {
+      "左前高度": 47,
+      "右前高度": 48,
+      "左后高度": 50,
+      "右后高度": 46
+    }
+  },
+  "关闭轻松载物": {
+    "created_at": "2026-05-13 12:06:50",
+    "results": {
+      "左前高度": 1,
+      "右前高度": 1,
+      "左后高度": 4,
+      "右后高度": 0
+    }
+  },
+  "打开轻松进出": {
+    "created_at": "2026-05-13 12:07:17",
+    "results": {
+      "左前高度": 29,
+      "右前高度": 28,
+      "左后高度": 27,
+      "右后高度": 30
+    }
+  },
+  "关闭轻松进出": {
+    "created_at": "2026-05-13 12:07:43",
+    "results": {
+      "左前高度": 1,
+      "右前高度": 1,
+      "左后高度": 0,
+      "右后高度": 2
+    }
+  },
+  "打开后视镜加热": {
+    "created_at": "2026-05-13 12:07:49",
+    "results": {
+      "左前高度": 1
+    }
+  },
+  "关闭后视镜加热": {
+    "created_at": "2026-05-13 12:07:58",
+    "results": {
+      "左前高度": 0
+    }
+  },
+  "亮屏检测": {
+    "created_at": "2026-05-15 14:35:41",
+    "results": {
+      "区域1_亮度": 95.7,
+      "区域2_亮度": 104.7,
+      "区域3_亮度": 110.3
+    }
+  },
+  "踩刹车": {
+    "created_at": "2026-05-14 12:09:59",
+    "results": {
+      "电源模式": 3
+    }
+  },
+  "等待": {
+    "created_at": "2026-05-15 14:35:25",
+    "results": {}
+  },
+  "截图": {
+    "created_at": "2026-05-14 12:10:54",
+    "results": {
+      "_screenshot_ok": true,
+      "_screenshot_info": "截屏OK | 拉取OK | 删除OK | 保存→D:\\Python-project\\Project\\ITS\\260514121025.png"
+    }
+  },
+  "机器人上锁": {
+    "created_at": "2026-05-14 14:01:59",
+    "results": {
+      "锁状态": 3
+    }
+  },
+  "机器人上车关门": {
+    "created_at": "2026-05-14 14:03:19",
+    "results": {
+      "主驾门状态": 0
+    }
+  },
+  "机器人解锁开门": {
+    "created_at": "2026-05-14 14:02:51",
+    "results": {
+      "锁状态": 0,
+      "主驾门状态": 3
+    }
+  },
+  "打开后排屏": {
+    "created_at": "2026-05-14 14:16:58",
+    "results": {}
+  },
+  "综合_音频探测": {
+    "type": "general_test",
+    "instruction": "音频探测",
+    "created_at": "2026-05-17 16:39:48",
+    "results": {
+      "平均音量": 7.72,
+      "是否静音": "否",
+      "音量阈值": 3.0,
+      "采集时长": 8.0,
+      "音频文件": "C:/Users/qqd824/Downloads/新建文件夹\\音频\\音频探测_20260517_163948.wav"
+    }
+  },
+  "语音_哈喽智己": {
+    "type": "voice_test",
+    "instruction": "哈喽智己",
+    "created_at": "2026-05-19 14:33:45",
+    "results": {
+      "recognition": "哈喽智己",
+      "response": "我来了",
+      "response_time_ms": 0,
+      "intent": "",
+      "voice_zone": "主驾"
+    }
+  },
+  "语音_打开空调": {
+    "type": "voice_test",
+    "instruction": "打开空调",
+    "created_at": "2026-05-23 11:58:31",
+    "results": {
+      "recognition": "打开空调",
+      "response": "好啦",
+      "response_time_ms": 216,
+      "intent": "",
+      "voice_zone": "主驾"
+    },
+    "signal_values": {
+      "空调状态": {
+        "value": 1,
+        "tolerance": 0
+      }
+    }
+  },
+  "语音_关闭空调": {
+    "type": "voice_test",
+    "instruction": "关闭空调",
+    "created_at": "2026-05-23 11:49:27",
+    "results": {
+      "recognition": "关闭空调",
+      "response": "收到",
+      "response_time_ms": 117,
+      "intent": "",
+      "voice_zone": "主驾"
+    },
+    "signal_values": {
+      "空调状态": {
+        "value": 0,
+        "tolerance": 0
+      }
+    }
+  },
+  "语音_打开车窗": {
+    "type": "voice_test",
+    "instruction": "打开车窗",
+    "created_at": "2026-05-27 11:45:07",
+    "results": {
+      "recognition": "打开车窗",
+      "response": "安排啦",
+      "response_time_ms": 335,
+      "intent": "",
+      "voice_zone": "主驾"
+    },
+    "signal_values": {
+      "主驾车窗": {
+        "value": 99.5,
+        "tolerance": 2
+      },
+      "副驾车窗": {
+        "value": 0,
+        "tolerance": 2
+      },
+      "左后车窗": {
+        "value": 0,
+        "tolerance": 2
+      },
+      "右后车窗": {
+        "value": 0,
+        "tolerance": 2
+      }
+    }
+  },
+  "语音_关闭车窗": {
+    "type": "voice_test",
+    "instruction": "关闭车窗",
+    "created_at": "2026-05-27 11:45:17",
+    "results": {
+      "recognition": "关闭车窗",
+      "response": "好的",
+      "response_time_ms": 289,
+      "intent": "",
+      "voice_zone": "主驾"
+    },
+    "signal_values": {
+      "主驾车窗": {
+        "value": 0,
+        "tolerance": 2
+      },
+      "副驾车窗": {
+        "value": 0,
+        "tolerance": 2
+      },
+      "左后车窗": {
+        "value": 0,
+        "tolerance": 2
+      },
+      "右后车窗": {
+        "value": 0,
+        "tolerance": 2
+      }
+    }
+  },
+  "语音_打开副驾车窗": {
+    "type": "voice_test",
+    "instruction": "打开副驾车窗",
+    "created_at": "2026-05-27 11:45:28",
+    "results": {
+      "recognition": "打开副驾车窗",
+      "response": "好的",
+      "response_time_ms": 373,
+      "intent": "",
+      "voice_zone": "主驾"
+    },
+    "signal_values": {
+      "主驾车窗": {
+        "value": 0,
+        "tolerance": 2
+      },
+      "副驾车窗": {
+        "value": 100,
+        "tolerance": 2
+      },
+      "左后车窗": {
+        "value": 0,
+        "tolerance": 2
+      },
+      "右后车窗": {
+        "value": 0,
+        "tolerance": 2
+      }
+    }
+  },
+  "语音_关闭副驾车窗": {
+    "type": "voice_test",
+    "instruction": "关闭副驾车窗",
+    "created_at": "2026-05-27 11:45:39",
+    "results": {
+      "recognition": "关闭副驾车窗",
+      "response": "OK",
+      "response_time_ms": 318,
+      "intent": "",
+      "voice_zone": "主驾"
+    },
+    "signal_values": {
+      "主驾车窗": {
+        "value": 0,
+        "tolerance": 2
+      },
+      "副驾车窗": {
+        "value": 0,
+        "tolerance": 2
+      },
+      "左后车窗": {
+        "value": 0,
+        "tolerance": 2
+      },
+      "右后车窗": {
+        "value": 0,
+        "tolerance": 2
+      }
+    }
+  },
+  "语音_打开前排车窗": {
+    "type": "voice_test",
+    "instruction": "打开前排车窗",
+    "created_at": "2026-05-19 14:34:51",
+    "results": {
+      "recognition": "打开前排车窗",
+      "response": "嗯",
+      "response_time_ms": 304,
+      "intent": "",
+      "voice_zone": "主驾"
+    },
+    "signal_values": {
+      "主驾车窗": {
+        "value": 100,
+        "tolerance": 2
+      },
+      "副驾车窗": {
+        "value": 100,
+        "tolerance": 2
+      },
+      "左后车窗": {
+        "value": 0,
+        "tolerance": 2
+      },
+      "右后车窗": {
+        "value": 0,
+        "tolerance": 2
+      }
+    }
+  },
+  "语音_关闭前排车窗": {
+    "type": "voice_test",
+    "instruction": "关闭前排车窗",
+    "created_at": "2026-05-19 14:35:01",
+    "results": {
+      "recognition": "关闭前排车窗",
+      "response": "嗯",
+      "response_time_ms": 203,
+      "intent": "",
+      "voice_zone": "主驾"
+    },
+    "signal_values": {
+      "主驾车窗": {
+        "value": 0,
+        "tolerance": 2
+      },
+      "副驾车窗": {
+        "value": 0,
+        "tolerance": 2
+      },
+      "左后车窗": {
+        "value": 0,
+        "tolerance": 2
+      },
+      "右后车窗": {
+        "value": 0,
+        "tolerance": 2
+      }
+    }
+  },
+  "语音_打开全车车窗": {
+    "type": "voice_test",
+    "instruction": "打开全车车窗",
+    "created_at": "2026-05-21 13:29:12",
+    "results": {
+      "recognition": "打开全车车窗",
+      "response": "没问题",
+      "response_time_ms": 217,
+      "intent": "",
+      "voice_zone": "主驾"
+    },
+    "signal_values": {
+      "主驾车窗": {
+        "value": 100,
+        "tolerance": 2
+      },
+      "副驾车窗": {
+        "value": 100,
+        "tolerance": 2
+      },
+      "左后车窗": {
+        "value": 100,
+        "tolerance": 2
+      },
+      "右后车窗": {
+        "value": 100,
+        "tolerance": 2
+      }
+    }
+  },
+  "语音_关闭全车车窗": {
+    "type": "voice_test",
+    "instruction": "关闭全车车窗",
+    "created_at": "2026-05-21 13:29:24",
+    "results": {
+      "recognition": "关闭全车车窗",
+      "response": "搞定",
+      "response_time_ms": 195,
+      "intent": "",
+      "voice_zone": "主驾"
+    },
+    "signal_values": {
+      "主驾车窗": {
+        "value": 0,
+        "tolerance": 2
+      },
+      "副驾车窗": {
+        "value": 0,
+        "tolerance": 2
+      },
+      "左后车窗": {
+        "value": 0,
+        "tolerance": 2
+      },
+      "右后车窗": {
+        "value": 0,
+        "tolerance": 2
+      }
+    }
+  },
+  "语音_你好智己": {
+    "type": "voice_test",
+    "instruction": "你好智己",
+    "created_at": "2026-06-12 17:40:34",
+    "results": {
+      "recognition": "你好智己",
+      "response": "我来了",
+      "response_time_ms": 0,
+      "intent": "",
+      "voice_zone": "主驾"
+    }
+  },
+  "综合_等待": {
+    "type": "general_test",
+    "instruction": "等待",
+    "created_at": "2026-05-19 21:11:58",
+    "results": {}
+  },
+  "语音_打开悬架轻松进出": {
+    "type": "voice_test",
+    "instruction": "打开悬架轻松进出",
+    "created_at": "2026-05-21 13:30:12",
+    "results": {
+      "recognition": "打开悬架轻松进出",
+      "response": "好的",
+      "response_time_ms": 351,
+      "intent": "",
+      "voice_zone": "主驾"
+    },
+    "signal_values": {
+      "左前高度": {
+        "value": -29,
+        "tolerance": 5
+      },
+      "右前高度": {
+        "value": -29,
+        "tolerance": 5
+      },
+      "左后高度": {
+        "value": -27,
+        "tolerance": 5
+      },
+      "右后高度": {
+        "value": -31,
+        "tolerance": 5
+      }
+    }
+  },
+  "语音_关闭悬架轻松进出": {
+    "type": "voice_test",
+    "instruction": "关闭悬架轻松进出",
+    "created_at": "2026-05-21 13:30:34",
+    "results": {
+      "recognition": "关闭悬架轻松进出",
+      "response": "安排啦",
+      "response_time_ms": 468,
+      "intent": "",
+      "voice_zone": "主驾"
+    },
+    "signal_values": {
+      "左前高度": {
+        "value": -1,
+        "tolerance": 3
+      },
+      "右前高度": {
+        "value": -2,
+        "tolerance": 5
+      },
+      "左后高度": {
+        "value": 0,
+        "tolerance": 5
+      },
+      "右后高度": {
+        "value": -3,
+        "tolerance": 5
+      }
+    }
+  },
+  "语音_打开悬架轻松载物": {
+    "type": "voice_test",
+    "instruction": "打开悬架轻松载物",
+    "created_at": "2026-05-20 14:25:32",
+    "results": {
+      "recognition": "打开悬架轻松载物",
+      "response": "OK",
+      "response_time_ms": 353,
+      "intent": "",
+      "voice_zone": "主驾"
+    },
+    "signal_values": {
+      "左前高度": {
+        "value": -1,
+        "tolerance": 5
+      },
+      "右前高度": {
+        "value": -1,
+        "tolerance": 5
+      },
+      "左后高度": {
+        "value": -36,
+        "tolerance": 5
+      },
+      "右后高度": {
+        "value": -39,
+        "tolerance": 5
+      }
+    }
+  },
+  "语音_关闭悬架轻松载物": {
+    "type": "voice_test",
+    "instruction": "关闭悬架轻松载物",
+    "created_at": "2026-05-20 14:25:53",
+    "results": {
+      "recognition": "关闭悬架轻松载物",
+      "response": "安排啦",
+      "response_time_ms": 389,
+      "intent": "",
+      "voice_zone": "主驾"
+    },
+    "signal_values": {
+      "左前高度": {
+        "value": -1,
+        "tolerance": 5
+      },
+      "右前高度": {
+        "value": -1,
+        "tolerance": 5
+      },
+      "左后高度": {
+        "value": 0,
+        "tolerance": 5
+      },
+      "右后高度": {
+        "value": -3,
+        "tolerance": 5
+      }
+    }
+  },
+  "语音_打开悬架轻松通过": {
+    "type": "voice_test",
+    "instruction": "打开悬架轻松通过",
+    "created_at": "2026-05-20 14:26:20",
+    "results": {
+      "recognition": "打开悬架轻松通过",
+      "response": "没问题",
+      "response_time_ms": 413,
+      "intent": "",
+      "voice_zone": "主驾"
+    },
+    "signal_values": {
+      "左前高度": {
+        "value": 47,
+        "tolerance": 5
+      },
+      "右前高度": {
+        "value": 47,
+        "tolerance": 5
+      },
+      "左后高度": {
+        "value": 50,
+        "tolerance": 5
+      },
+      "右后高度": {
+        "value": 46,
+        "tolerance": 5
+      }
+    }
+  },
+  "语音_关闭悬架轻松通过": {
+    "type": "voice_test",
+    "instruction": "关闭悬架轻松通过",
+    "created_at": "2026-05-20 14:26:47",
+    "results": {
+      "recognition": "关闭悬架轻松通过",
+      "response": "安排啦",
+      "response_time_ms": 339,
+      "intent": "",
+      "voice_zone": "主驾"
+    },
+    "signal_values": {
+      "左前高度": {
+        "value": 1,
+        "tolerance": 5
+      },
+      "右前高度": {
+        "value": 2,
+        "tolerance": 5
+      },
+      "左后高度": {
+        "value": 4,
+        "tolerance": 5
+      },
+      "右后高度": {
+        "value": 1,
+        "tolerance": 5
+      }
+    }
+  },
+  "语音_空调温度调节到20.5度": {
+    "type": "voice_test",
+    "instruction": "空调温度调节到20.5度",
+    "created_at": "2026-05-23 11:58:44",
+    "results": {
+      "recognition": "空调温度调节到20.5度",
+      "response": "OK",
+      "response_time_ms": 387,
+      "intent": "",
+      "voice_zone": "主驾"
+    },
+    "signal_values": {
+      "主驾温度": {
+        "value": 20.5,
+        "tolerance": 0
+      },
+      "副驾温度": {
+        "value": 20.5,
+        "tolerance": 0
+      }
+    }
+  },
+  "语音_空调温度调节到最低": {
+    "type": "voice_test",
+    "instruction": "空调温度调节到最低",
+    "created_at": "2026-05-23 11:49:00",
+    "results": {
+      "recognition": "空调温度调节到最低",
+      "response": "好的，主驾空调温度调至最低。",
+      "response_time_ms": 0,
+      "intent": "",
+      "voice_zone": ""
+    },
+    "signal_values": {
+      "主驾温度": {
+        "value": 15.5,
+        "tolerance": 0
+      },
+      "副驾温度": {
+        "value": 15.5,
+        "tolerance": 0
+      }
+    }
+  },
+  "语音_空调温度调节到30度": {
+    "type": "voice_test",
+    "instruction": "空调温度调节到30度",
+    "created_at": "2026-05-20 16:35:07",
+    "results": {
+      "recognition": "空调温度调节到30度",
+      "response": "搞定",
+      "response_time_ms": 506,
+      "intent": "",
+      "voice_zone": "主驾"
+    },
+    "signal_values": {
+      "主驾温度": {
+        "value": 30,
+        "tolerance": 0
+      },
+      "副驾温度": {
+        "value": 30,
+        "tolerance": 0
+      }
+    }
+  },
+  "语音_打开空调AC": {
+    "type": "voice_test",
+    "instruction": "打开空调AC",
+    "created_at": "2026-05-20 16:35:15",
+    "results": {
+      "recognition": "打开空调AC",
+      "response": "AC已经打开了",
+      "response_time_ms": 434,
+      "intent": "",
+      "voice_zone": "主驾"
+    },
+    "signal_values": {
+      "AC状态": {
+        "value": 1,
+        "tolerance": 0
+      }
+    }
+  },
+  "语音_关闭空调AC": {
+    "type": "voice_test",
+    "instruction": "关闭空调AC",
+    "created_at": "2026-05-20 16:35:23",
+    "results": {
+      "recognition": "关闭空调AC",
+      "response": "搞定",
+      "response_time_ms": 381,
+      "intent": "",
+      "voice_zone": "主驾"
+    },
+    "signal_values": {
+      "AC状态": {
+        "value": 0,
+        "tolerance": 0
+      }
+    }
+  },
+  "语音_打开温度同步": {
+    "type": "voice_test",
+    "instruction": "打开温度同步",
+    "created_at": "2026-05-20 16:35:33",
+    "results": {
+      "recognition": "打开温度同步",
+      "response": "好呀",
+      "response_time_ms": 416,
+      "intent": "",
+      "voice_zone": "主驾"
+    },
+    "signal_values": {
+      "温度同步状态": {
+        "value": 1,
+        "tolerance": 0
+      },
+      "主驾温度": {
+        "value": 30,
+        "tolerance": 0
+      },
+      "副驾温度": {
+        "value": 30,
+        "tolerance": 0
+      }
+    }
+  },
+  "语音_空调风量设置成最低": {
+    "type": "voice_test",
+    "instruction": "空调风量设置成最低",
+    "created_at": "2026-05-20 16:35:52",
+    "results": {
+      "recognition": "空调风量设置成最低",
+      "response": "好啦",
+      "response_time_ms": 369,
+      "intent": "",
+      "voice_zone": "主驾"
+    },
+    "signal_values": {
+      "前排风量挡位": {
+        "value": 0,
+        "tolerance": 0
+      }
+    }
+  },
+  "语音_空调风量设置成最高": {
+    "type": "voice_test",
+    "instruction": "空调风量设置成最高",
+    "created_at": "2026-05-20 16:36:02",
+    "results": {
+      "recognition": "空调风量设置成最高",
+      "response": "安排啦",
+      "response_time_ms": 399,
+      "intent": "",
+      "voice_zone": "主驾"
+    },
+    "signal_values": {
+      "前排风量挡位": {
+        "value": 0,
+        "tolerance": 0
+      }
+    }
+  },
+  "语音_空调风量5档": {
+    "type": "voice_test",
+    "instruction": "空调风量5档",
+    "created_at": "2026-05-20 16:36:11",
+    "results": {
+      "recognition": "空调风量5档",
+      "response": "好",
+      "response_time_ms": 421,
+      "intent": "",
+      "voice_zone": "主驾"
+    },
+    "signal_values": {
+      "前排风量挡位": {
+        "value": 0,
+        "tolerance": 0
+      }
+    }
+  },
+  "语音_打开前排遮阳帘": {
+    "type": "voice_test",
+    "instruction": "打开前排遮阳帘",
+    "created_at": "2026-05-21 13:30:49",
+    "results": {
+      "recognition": "打开前排遮阳帘",
+      "response": "没问题",
+      "response_time_ms": 421,
+      "intent": "",
+      "voice_zone": "主驾"
+    },
+    "signal_values": {
+      "前遮阳帘位置": {
+        "value": 100,
+        "tolerance": 2
+      }
+    }
+  },
+  "语音_打开后排遮阳帘": {
+    "type": "voice_test",
+    "instruction": "打开后排遮阳帘",
+    "created_at": "2026-05-20 14:33:00",
+    "results": {
+      "recognition": "打开后排遮阳帘",
+      "response": "嗯",
+      "response_time_ms": 441,
+      "intent": "",
+      "voice_zone": "主驾"
+    },
+    "signal_values": {
+      "后遮阳帘位置": {
+        "value": 98,
+        "tolerance": 2
+      }
+    }
+  },
+  "语音_关闭前排遮阳帘": {
+    "type": "voice_test",
+    "instruction": "关闭前排遮阳帘",
+    "created_at": "2026-05-21 13:31:03",
+    "results": {
+      "recognition": "关闭前排遮阳帘",
+      "response": "收到",
+      "response_time_ms": 441,
+      "intent": "",
+      "voice_zone": "主驾"
+    },
+    "signal_values": {
+      "前遮阳帘位置": {
+        "value": 0,
+        "tolerance": 2
+      }
+    }
+  },
+  "语音_关闭后排遮阳帘": {
+    "type": "voice_test",
+    "instruction": "关闭后排遮阳帘",
+    "created_at": "2026-05-20 14:28:43",
+    "results": {
+      "recognition": "关闭后排遮阳帘",
+      "response": "搞定",
+      "response_time_ms": 428,
+      "intent": "",
+      "voice_zone": "主驾"
+    },
+    "signal_values": {
+      "后遮阳帘位置": {
+        "value": 68,
+        "tolerance": 2
+      }
+    }
+  },
+  "语音_打开方向盘加热": {
+    "type": "voice_test",
+    "instruction": "打开方向盘加热",
+    "created_at": "2026-05-20 14:28:50",
+    "results": {
+      "recognition": "打开方向盘加热",
+      "response": "好",
+      "response_time_ms": 214,
+      "intent": "",
+      "voice_zone": "主驾"
+    },
+    "signal_values": {
+      "方向盘加热状态": {
+        "value": 3,
+        "tolerance": 0
+      }
+    }
+  },
+  "语音_方向盘加热调节到2档": {
+    "type": "voice_test",
+    "instruction": "方向盘加热调节到2档",
+    "created_at": "2026-05-20 14:28:57",
+    "results": {
+      "recognition": "方向盘加热调节到2档",
+      "response": "",
+      "response_time_ms": 0,
+      "intent": "",
+      "voice_zone": ""
+    },
+    "signal_values": {
+      "方向盘加热挡位": {
+        "value": 2,
+        "tolerance": 0
+      }
+    }
+  },
+  "语音_关闭方向盘加热": {
+    "type": "voice_test",
+    "instruction": "关闭方向盘加热",
+    "created_at": "2026-05-20 14:29:03",
+    "results": {
+      "recognition": "关闭方向盘加热",
+      "response": "OK",
+      "response_time_ms": 218,
+      "intent": "",
+      "voice_zone": "主驾"
+    },
+    "signal_values": {
+      "方向盘加热状态": {
+        "value": 0,
+        "tolerance": 0
+      }
+    }
+  },
+  "语音_关闭温度同步": {
+    "type": "voice_test",
+    "instruction": "关闭温度同步",
+    "created_at": "2026-05-20 16:35:43",
+    "results": {
+      "recognition": "关闭温度同步",
+      "response": "没问题",
+      "response_time_ms": 482,
+      "intent": "",
+      "voice_zone": "主驾"
+    },
+    "signal_values": {
+      "温度同步状态": {
+        "value": 0,
+        "tolerance": 0
+      },
+      "主驾温度": {
+        "value": 30,
+        "tolerance": 0
+      },
+      "副驾温度": {
+        "value": 30,
+        "tolerance": 0
+      }
+    }
+  },
+  "语音_打开座椅按摩": {
+    "type": "voice_test",
+    "instruction": "打开座椅按摩",
+    "created_at": "2026-05-20 21:49:30",
+    "results": {
+      "recognition": "",
+      "response": "",
+      "response_time_ms": 0,
+      "voice_zone": ""
+    }
+  },
+  "综合_截图": {
+    "type": "general_test",
+    "instruction": "截图",
+    "created_at": "2026-09-10 20:30:09",
+    "results": {
+      "_screenshot_ok": true,
+      "_screenshot_info": "已保存 4 张截图: C:\\Users\\qqd824\\Downloads\\33\\截图"
+    }
+  },
+  "语音_空调温度调节到最高": {
+    "type": "voice_test",
+    "instruction": "空调温度调节到最高",
+    "created_at": "2026-05-23 11:49:17",
+    "results": {
+      "recognition": "空调温度调节到最高",
+      "response": "好的，正在将空调温度调至最高。",
+      "response_time_ms": 0,
+      "intent": "",
+      "voice_zone": ""
+    },
+    "signal_values": {
+      "主驾温度": {
+        "value": 32.5,
+        "tolerance": 0
+      },
+      "副驾温度": {
+        "value": 32.5,
+        "tolerance": 0
+      }
+    }
+  },
+  "语音_打开左后车窗": {
+    "type": "voice_test",
+    "instruction": "打开左后车窗",
+    "created_at": "2026-05-27 11:43:47",
+    "results": {
+      "recognition": "",
+      "response": "",
+      "response_time_ms": 0,
+      "intent": "",
+      "voice_zone": ""
+    },
+    "signal_values": {
+      "主驾车窗": {
+        "value": 0,
+        "tolerance": 2
+      },
+      "副驾车窗": {
+        "value": 0,
+        "tolerance": 2
+      },
+      "左后车窗": {
+        "value": 0,
+        "tolerance": 2
+      },
+      "右后车窗": {
+        "value": 0,
+        "tolerance": 2
+      }
+    }
+  },
+  "语音_关闭左后车窗": {
+    "type": "voice_test",
+    "instruction": "关闭左后车窗",
+    "created_at": "2026-05-27 11:43:59",
+    "results": {
+      "recognition": "关闭左后车窗",
+      "response": "左后车窗已经关了",
+      "response_time_ms": 732,
+      "intent": "",
+      "voice_zone": "主驾"
+    },
+    "signal_values": {
+      "主驾车窗": {
+        "value": 0,
+        "tolerance": 2
+      },
+      "副驾车窗": {
+        "value": 0,
+        "tolerance": 2
+      },
+      "左后车窗": {
+        "value": 0,
+        "tolerance": 2
+      },
+      "右后车窗": {
+        "value": 0,
+        "tolerance": 2
+      }
+    }
+  },
+  "语音_打开车窗通风": {
+    "type": "voice_test",
+    "instruction": "打开车窗通风",
+    "created_at": "2026-05-21 13:29:36",
+    "results": {
+      "recognition": "打开车窗通风",
+      "response": "好呀",
+      "response_time_ms": 416,
+      "intent": "",
+      "voice_zone": "主驾"
+    },
+    "signal_values": {
+      "主驾车窗": {
+        "value": 12.5,
+        "tolerance": 2
+      },
+      "副驾车窗": {
+        "value": 0,
+        "tolerance": 2
+      },
+      "左后车窗": {
+        "value": 0,
+        "tolerance": 2
+      },
+      "右后车窗": {
+        "value": 0,
+        "tolerance": 2
+      }
+    }
+  },
+  "语音_关闭车窗通风": {
+    "type": "voice_test",
+    "instruction": "关闭车窗通风",
+    "created_at": "2026-05-21 13:29:48",
+    "results": {
+      "recognition": "关闭车窗通风",
+      "response": "好啦",
+      "response_time_ms": 406,
+      "intent": "",
+      "voice_zone": "主驾"
+    },
+    "signal_values": {
+      "主驾车窗": {
+        "value": 0,
+        "tolerance": 2
+      },
+      "副驾车窗": {
+        "value": 0,
+        "tolerance": 2
+      },
+      "左后车窗": {
+        "value": 0,
+        "tolerance": 2
+      },
+      "右后车窗": {
+        "value": 0,
+        "tolerance": 2
+      }
+    }
+  },
+  "语音_打开后备箱": {
+    "type": "voice_test",
+    "instruction": "打开后备箱",
+    "created_at": "2026-05-21 13:31:17",
+    "results": {
+      "recognition": "打开后备箱",
+      "response": "好",
+      "response_time_ms": 200,
+      "intent": "",
+      "voice_zone": ""
+    },
+    "signal_values": {
+      "尾门开度": {
+        "value": 61,
+        "tolerance": 0
+      },
+      "尾门锁状态": {
+        "value": 1,
+        "tolerance": 0
+      },
+      "左前高度": {
+        "value": -1,
+        "tolerance": 8
+      },
+      "右前高度": {
+        "value": -1,
+        "tolerance": 8
+      },
+      "左后高度": {
+        "value": -36,
+        "tolerance": 8
+      },
+      "右后高度": {
+        "value": -40,
+        "tolerance": 8
+      }
+    }
+  },
+  "语音_关闭后备箱": {
+    "type": "voice_test",
+    "instruction": "关闭后备箱",
+    "created_at": "2026-05-21 13:31:35",
+    "results": {
+      "recognition": "关闭后备箱",
+      "response": "收到",
+      "response_time_ms": 416,
+      "intent": "",
+      "voice_zone": ""
+    },
+    "signal_values": {
+      "尾门开度": {
+        "value": 0,
+        "tolerance": 0
+      },
+      "尾门锁状态": {
+        "value": 0,
+        "tolerance": 0
+      },
+      "左前高度": {
+        "value": -1,
+        "tolerance": 8
+      },
+      "右前高度": {
+        "value": -1,
+        "tolerance": 8
+      },
+      "左后高度": {
+        "value": 1,
+        "tolerance": 8
+      },
+      "右后高度": {
+        "value": -3,
+        "tolerance": 8
+      }
+    }
+  },
+  "综合_调节主驾温度-Lo": {
+    "type": "general_test",
+    "instruction": "调节主驾温度-Lo",
+    "created_at": "2026-05-22 09:28:48",
+    "results": {
+      "主驾温度": 15.5,
+      "副驾温度": 32.5
+    }
+  },
+  "综合_调节主驾温度-22度": {
+    "type": "general_test",
+    "instruction": "调节主驾温度-22度",
+    "created_at": "2026-05-22 09:27:12",
+    "results": {
+      "主驾温度": 22,
+      "副驾温度": 22
+    }
+  },
+  "综合_调节主驾温度-25.5度": {
+    "type": "general_test",
+    "instruction": "调节主驾温度-25.5度",
+    "created_at": "2026-05-22 09:27:18",
+    "results": {
+      "主驾温度": 25.5,
+      "副驾温度": 25.5
+    }
+  },
+  "综合_调节主驾温度-30度": {
+    "type": "general_test",
+    "instruction": "调节主驾温度-30度",
+    "created_at": "2026-05-22 09:27:26",
+    "results": {
+      "主驾温度": 30,
+      "副驾温度": 30
+    }
+  },
+  "综合_调节主驾温度-High": {
+    "type": "general_test",
+    "instruction": "调节主驾温度-High",
+    "created_at": "2026-05-22 09:27:32",
+    "results": {
+      "主驾温度": 32.5,
+      "副驾温度": 32.5
+    }
+  },
+  "综合_调节副驾温度-Lo": {
+    "type": "general_test",
+    "instruction": "调节副驾温度-Lo",
+    "created_at": "2026-05-22 09:27:39",
+    "results": {
+      "主驾温度": 32.5,
+      "副驾温度": 15.5
+    }
+  },
+  "综合_调节副驾温度-22度": {
+    "type": "general_test",
+    "instruction": "调节副驾温度-22度",
+    "created_at": "2026-05-22 09:27:46",
+    "results": {
+      "主驾温度": 32.5,
+      "副驾温度": 22
+    }
+  },
+  "综合_调节副驾温度-25.5度": {
+    "type": "general_test",
+    "instruction": "调节副驾温度-25.5度",
+    "created_at": "2026-05-22 09:27:52",
+    "results": {
+      "主驾温度": 32.5,
+      "副驾温度": 25.5
+    }
+  },
+  "综合_调节副驾温度-30度": {
+    "type": "general_test",
+    "instruction": "调节副驾温度-30度",
+    "created_at": "2026-05-22 09:27:59",
+    "results": {
+      "主驾温度": 32.5,
+      "副驾温度": 30
+    }
+  },
+  "综合_调节副驾温度-High": {
+    "type": "general_test",
+    "instruction": "调节副驾温度-High",
+    "created_at": "2026-05-22 09:28:05",
+    "results": {
+      "主驾温度": 32.5,
+      "副驾温度": 32.5
+    }
+  },
+  "综合_前排风量1挡": {
+    "type": "general_test",
+    "instruction": "前排风量1挡",
+    "created_at": "2026-05-22 09:28:10",
+    "results": {
+      "前排风量挡位": 1
+    }
+  },
+  "综合_前排风量4挡": {
+    "type": "general_test",
+    "instruction": "前排风量4挡",
+    "created_at": "2026-05-22 09:28:15",
+    "results": {
+      "前排风量挡位": 4
+    }
+  },
+  "综合_前排风量6挡": {
+    "type": "general_test",
+    "instruction": "前排风量6挡",
+    "created_at": "2026-05-22 09:28:20",
+    "results": {
+      "前排风量挡位": 6
+    }
+  },
+  "综合_前排风量9挡": {
+    "type": "general_test",
+    "instruction": "前排风量9挡",
+    "created_at": "2026-05-22 09:28:25",
+    "results": {
+      "前排风量挡位": 9
+    }
+  },
+  "综合_前排风量MAX挡": {
+    "type": "general_test",
+    "instruction": "前排风量MAX挡",
+    "created_at": "2026-05-22 09:28:30",
+    "results": {
+      "前排风量挡位": 11
+    }
+  },
+  "语音_打开爱奇艺": {
+    "type": "voice_test",
+    "instruction": "打开爱奇艺",
+    "created_at": "2026-06-12 17:40:40",
+    "results": {
+      "recognition": "打开爱奇艺",
+      "response": "好的",
+      "response_time_ms": 152,
+      "intent": "",
+      "voice_zone": ""
+    }
+  },
+  "语音_关闭爱奇艺": {
+    "type": "voice_test",
+    "instruction": "关闭爱奇艺",
+    "created_at": "2026-06-12 17:40:48",
+    "results": {
+      "recognition": "关闭爱奇艺",
+      "response": "好呀",
+      "response_time_ms": 124,
+      "intent": "",
+      "voice_zone": ""
+    }
+  },
+  "语音_打开哔哩哔哩": {
+    "type": "voice_test",
+    "instruction": "打开哔哩哔哩",
+    "created_at": "2026-05-27 13:30:10",
+    "results": {
+      "recognition": "打开哔哩哔哩",
+      "response": "ok",
+      "response_time_ms": 646,
+      "intent": "",
+      "voice_zone": ""
+    }
+  },
+  "语音_关闭哔哩哔哩": {
+    "type": "voice_test",
+    "instruction": "关闭哔哩哔哩",
+    "created_at": "2026-05-27 13:30:16",
+    "results": {
+      "recognition": "关闭哔哩哔哩",
+      "response": "没问题",
+      "response_time_ms": 647,
+      "intent": "",
+      "voice_zone": ""
+    }
+  },
+  "语音_打开上观新闻": {
+    "type": "voice_test",
+    "instruction": "打开上观新闻",
+    "created_at": "2026-05-27 13:30:21",
+    "results": {
+      "recognition": "打开上观新闻",
+      "response": "ok",
+      "response_time_ms": 660,
+      "intent": "",
+      "voice_zone": "主驾"
+    }
+  },
+  "语音_关闭上观新闻": {
+    "type": "voice_test",
+    "instruction": "关闭上观新闻",
+    "created_at": "2026-05-27 13:30:27",
+    "results": {
+      "recognition": "关闭上观新闻",
+      "response": "嗯",
+      "response_time_ms": 645,
+      "intent": "",
+      "voice_zone": "主驾"
+    }
+  },
+  "语音_打开一路刷": {
+    "type": "voice_test",
+    "instruction": "打开一路刷",
+    "created_at": "2026-05-27 13:30:32",
+    "results": {
+      "recognition": "打开一路刷",
+      "response": "好的",
+      "response_time_ms": 694,
+      "intent": "",
+      "voice_zone": ""
+    }
+  },
+  "语音_关闭一路刷": {
+    "type": "voice_test",
+    "instruction": "关闭一路刷",
+    "created_at": "2026-05-27 13:30:37",
+    "results": {
+      "recognition": "关闭一路刷",
+      "response": "好的",
+      "response_time_ms": 720,
+      "intent": "",
+      "voice_zone": ""
+    }
+  },
+  "语音_打开 QQ 音乐": {
+    "type": "voice_test",
+    "instruction": "打开 QQ 音乐",
+    "created_at": "2026-05-27 13:30:43",
+    "results": {
+      "recognition": "打开QQ音乐",
+      "response": "嗯",
+      "response_time_ms": 328,
+      "intent": "",
+      "voice_zone": ""
+    }
+  },
+  "语音_关闭 QQ 音乐": {
+    "type": "voice_test",
+    "instruction": "关闭 QQ 音乐",
+    "created_at": "2026-05-27 13:30:48",
+    "results": {
+      "recognition": "关闭QQ音乐",
+      "response": "OK",
+      "response_time_ms": 0,
+      "intent": "",
+      "voice_zone": ""
+    }
+  },
+  "语音_打开网易云音乐": {
+    "type": "voice_test",
+    "instruction": "打开网易云音乐",
+    "created_at": "2026-05-27 13:30:54",
+    "results": {
+      "recognition": "打开网易云音乐",
+      "response": "安排啦",
+      "response_time_ms": 347,
+      "intent": "",
+      "voice_zone": ""
+    }
+  },
+  "语音_关闭网易云音乐": {
+    "type": "voice_test",
+    "instruction": "关闭网易云音乐",
+    "created_at": "2026-05-27 13:31:00",
+    "results": {
+      "recognition": "关闭网易云音乐",
+      "response": "好呀",
+      "response_time_ms": 336,
+      "intent": "",
+      "voice_zone": ""
+    }
+  },
+  "语音_打开蓝牙音乐": {
+    "type": "voice_test",
+    "instruction": "打开蓝牙音乐",
+    "created_at": "2026-05-27 13:31:05",
+    "results": {
+      "recognition": "打开蓝牙音乐",
+      "response": "安排啦",
+      "response_time_ms": 389,
+      "intent": "",
+      "voice_zone": ""
+    }
+  },
+  "语音_关闭蓝牙音乐": {
+    "type": "voice_test",
+    "instruction": "关闭蓝牙音乐",
+    "created_at": "2026-05-27 13:31:11",
+    "results": {
+      "recognition": "关闭蓝牙音乐",
+      "response": "搞定",
+      "response_time_ms": 349,
+      "intent": "",
+      "voice_zone": ""
+    }
+  },
+  "综合_车窗全开": {
+    "type": "general_test",
+    "instruction": "车窗全开",
+    "created_at": "2026-06-14 14:10:11",
+    "results": {
+      "主驾车窗": 100,
+      "副驾车窗": 100,
+      "左后车窗": 100,
+      "右后车窗": 100
+    }
+  },
+  "综合_车窗全关": {
+    "type": "general_test",
+    "instruction": "车窗全关",
+    "created_at": "2026-06-14 14:10:20",
+    "results": {
+      "主驾车窗": 0,
+      "副驾车窗": 0,
+      "左后车窗": 0,
+      "右后车窗": 0
+    }
+  },
+  "综合_车窗通风": {
+    "type": "general_test",
+    "instruction": "车窗通风",
+    "created_at": "2026-06-14 14:10:26",
+    "results": {
+      "主驾车窗": 12.5,
+      "副驾车窗": 12.5,
+      "左后车窗": 12.5,
+      "右后车窗": 12.5
+    }
+  },
+  "综合_打开空调": {
+    "type": "general_test",
+    "instruction": "打开空调",
+    "created_at": "2026-06-14 14:10:34",
+    "results": {
+      "空调状态": 1
+    }
+  },
+  "综合_关闭空调": {
+    "type": "general_test",
+    "instruction": "关闭空调",
+    "created_at": "2026-06-14 14:10:53",
+    "results": {
+      "空调状态": 0
+    }
+  },
+  "综合_打开AC": {
+    "type": "general_test",
+    "instruction": "打开AC",
+    "created_at": "2026-06-14 14:10:38",
+    "results": {
+      "AC状态": 1
+    }
+  },
+  "综合_关闭AC": {
+    "type": "general_test",
+    "instruction": "关闭AC",
+    "created_at": "2026-06-14 14:10:47",
+    "results": {
+      "AC状态": 0
+    }
+  },
+  "综合_账号": {
+    "type": "general_test",
+    "instruction": "账号",
+    "created_at": "2026-06-26 19:46:49",
+    "results": {
+      "账号信息": "{\"role\":\"Owner\",\"uid\":\"1000000000650051\",\"userFolderId\":1}"
+    }
+  },
+  "综合_诊断—左前门电释放": {
+    "type": "general_test",
+    "instruction": "诊断—左前门电释放",
+    "created_at": "2026-06-30 15:04:28",
+    "results": {
+      "锁状态": 0,
+      "主驾门状态": 3
+    }
+  },
+  "综合_诊断-右前门电释放": {
+    "type": "general_test",
+    "instruction": "诊断-右前门电释放",
+    "created_at": "2026-06-30 15:33:55",
+    "results": {
+      "锁状态": 0,
+      "副驾门状态": 2
+    }
+  },
+  "综合_JS-语音服务开关状态": {
+    "type": "general_test",
+    "instruction": "JS-语音服务开关状态",
+    "created_at": "2026-07-27 10:43:38",
+    "results": {
+      "语音服务开关状态": "voice1 =page://systemres.yunos.com/assets/caf_images/hdt_light/SwitchLA/ON/Normal.png;"
+    }
+  },
+  "综合_驾驶-目标电量": {
+    "type": "general_test",
+    "instruction": "驾驶-目标电量",
+    "created_at": "2026-07-31 13:12:24",
+    "results": {
+      "目标电量设置": 51
+    }
+  },
+  "综合_JS-连接设置开关状态": {
+    "type": "general_test",
+    "instruction": "JS-连接设置开关状态",
+    "created_at": "2026-08-03 19:35:31",
+    "results": {
+      "Con1": "ON",
+      "Con2": "ON",
+      "Con3": "OFF",
+      "Con4": "#FCFCFFDB",
+      "Con5": "#FCFCFF99",
+      "Con6": "ON",
+      "Con7": "ON",
+      "Con8": "ON"
+    }
+  },
+  "综合_JS-语音设置开关状态": {
+    "type": "general_test",
+    "instruction": "JS-语音设置开关状态",
+    "created_at": "2026-08-03 19:33:16",
+    "results": {
+      "voice1": "ON",
+      "voice2": "ON",
+      "voice3": "OFF",
+      "voice4": "ON",
+      "voice5": "未设置",
+      "voice6": "#83634EFF",
+      "voice7": "#83634EFF",
+      "voice8": "#83634EFF",
+      "voice9": "#83634EFF",
+      "voice10": "#FCFCFFDB",
+      "voice11": "#FCFCFF99",
+      "voice12": "#FCFCFF99",
+      "voice13": "#FCFCFF99",
+      "voice14": "#FCFCFFDB",
+      "voice15": "#FCFCFF99",
+      "voice16": "#FCFCFF99",
+      "voice17": "#FCFCFF99",
+      "voice18": "ON",
+      "voice19": "ON",
+      "voice20": "ON",
+      "voice21": "ON",
+      "voice22": "ON"
+    }
+  },
+  "综合_JS-智驾设置状态": {
+    "type": "general_test",
+    "instruction": "JS-智驾设置状态",
+    "created_at": "2026-08-03 16:59:30",
+    "results": {
+      "bounds": "[3436,916][3520,992]",
+      "object": "CusButtonBML",
+      "offset_x": "0",
+      "text": "",
+      "x": "3478, y = 954,ret = true"
+    }
+  },
+  "综合_JS-智驾设置开关状态": {
+    "type": "general_test",
+    "instruction": "JS-智驾设置开关状态",
+    "created_at": "2026-08-03 19:35:04",
+    "results": {
+      "Plt1": "#FCFCFF99",
+      "Plt2": "#FCFCFFDB",
+      "Plt3": "#FCFCFF99",
+      "Plt4": "ON",
+      "Plt5": "ON",
+      "Plt6": "ON",
+      "Plt7": "ON",
+      "Plt8": "ON",
+      "Plt9": "ON",
+      "Plt10": "ON",
+      "Plt11": "ON"
+    }
+  },
+  "综合_JS-声音设置开关状态": {
+    "type": "general_test",
+    "instruction": "JS-声音设置开关状态",
+    "created_at": "2026-08-03 19:34:17",
+    "results": {
+      "Snd1": "SoundStageTitleText",
+      "Snd2": "SoundStageTitleText",
+      "Snd3": "SoundStageTitleText",
+      "Snd4": "SoundStageTitleSelectedText",
+      "Snd5": "SoundStageTitleText",
+      "Snd6": "ON",
+      "Snd7": "#FFE9DC14",
+      "Snd8": "#FFE9DC14",
+      "Snd9": "#A46A4199",
+      "Snd10": "#FFE9DC14",
+      "Snd11": "#FFE9DC14",
+      "Snd12": "#FFE9DC14",
+      "Snd13": "全车共享",
+      "Snd14": "OFF",
+      "Snd15": "Rectangle(3483,285 - 3597,309)",
+      "Snd16": "Rectangle(3483,445 - 3769,469)",
+      "Snd17": "Rectangle(3483,605 - 3769,629)",
+      "Snd18": "ON",
+      "Snd19": "ON",
+      "Snd20": "ON",
+      "Snd21": "ON",
+      "Snd22": "ON",
+      "Snd23": "#FCFCFF99",
+      "Snd24": "#FCFCFFDB"
+    }
+  },
+  "综合_JS-显示设置开关状态": {
+    "type": "general_test",
+    "instruction": "JS-显示设置开关状态",
+    "created_at": "2026-08-03 19:36:38",
+    "results": {
+      "Show1": "ON",
+      "Show2": "#FCFCFFDB",
+      "Show3": "#FCFCFF99",
+      "Show4": "#FCFCFF99",
+      "Show5": "#83634EFF",
+      "Show6": "#FFE9DC14",
+      "Show7": "#FFE9DC14",
+      "Show8": "OFF",
+      "Show9": "ON",
+      "Show10": "#FCFCFFDB",
+      "Show11": "#FCFCFF99",
+      "Show12": "transparent",
+      "Show13": "transparent",
+      "Show14": "transparent",
+      "Show15": "#83634EFF",
+      "Show16": "#FFE9DC14",
+      "Show17": "#FFE9DC14",
+      "Show18": "#FFE9DC14",
+      "Show19": "#FFE9DC14",
+      "Show20": "#FFE9DC14",
+      "Show21": "#FCFCFF99",
+      "Show22": "#FCFCFFDB",
+      "Show23": "ON",
+      "Show24": "OFF",
+      "Show25": "OFF",
+      "Show26": "page://systemres.yunos.com/assets/caf_images/{theme}/CheckBoxLA/Selected/Normal.png",
+      "Show27": "page://systemres.yunos.com/assets/caf_images/{theme}/CheckBoxLA/Unselected/Normal.png"
+    }
+  },
+  "综合_8797_C屏下电": {
+    "type": "general_test",
+    "instruction": "C屏下电",
+    "created_at": "2026-09-10 15:17:44",
+    "results": {
+      "电源模式状态": "OFF"
+    }
+  },
+  "综合_Lastmode快速校验": {
+    "type": "general_test",
+    "instruction": "Lastmode快速校验",
+    "created_at": "2026-09-26 16:52:32",
+    "results": {
+      "006^39^10": "on",
+      "006^16^10": "off",
+      "007^9999^10^door.vehicle_speed_limit": "false",
+      "004^9999^10^light.welcomeLamp": "off",
+      "007^9999^10^icebox.child_lock": "off",
+      "006^22^10": "off",
+      "004^8^10": "on",
+      "007^9999^10^carbody.elecMirRecvAutoDown": "off",
+      "005^23^10": "on",
+      "001^9999^10^ac.maxCooling": "off",
+      "002^9999^10^seat_hud_height": 11,
+      "005^0^10": "NORMAL",
+      "005^9999^10^driving.comfortNoCarsickMode": "off",
+      "007^9999^10^carbody.wiperMaintenance": "off",
+      "006^45^10": "S20",
+      "001^9999^10^ac.automode": "off",
+      "008^9999^10^car.rightRearTirePressure": 2.44,
+      "002^9999^10^adjust.rear.left.frontLift": 0,
+      "002^9999^10^adjust.passenger.frontLift": 0,
+      "007^9999^10^icebox.door_ctrl": "off",
+      "005^41^10": "off",
+      "002^9999^10^seat_massage_driver": "off",
+      "001^9999^10^ac.aux.heat": "on",
+      "004^13^10": "on",
+      "007^9999^10^quick.outsideMirrorFoldExpand": "EXPAND",
+      "009^9999^10^Trip_A_F_Time": 9,
+      "006^11^10": "Gentle",
+      "005^9999^10^drivingCtl.autoholdMode": "off",
+      "002^9999^10^seat.rear_right.armrest_welcome": "on",
+      "009^9999^10^recharge.chargeString": "unPlugged",
+      "001^9999^10^ac.eco": "off",
+      "002^9999^10^seat_ventilation_driver": "off",
+      "002^9999^10^adjust.rear.right.bigLeg": 0,
+      "002^9999^10^seat_hud_angle": 11,
+      "004^2^10": "off",
+      "005^9999^10^drivingCtl.steeringFeel": "normal",
+      "009^9999^10^recharge.charge_status": "unPlugged",
+      "007^9999^10^quick.chargingDoor": "off",
+      "005^11^10": "comfort",
+      "009^9999^10^charge.produce.electricity": "off",
+      "007^9999^10^carbody.fuelGate": "inactive",
+      "005^16^10": "off",
+      "001^9999^10^ac.outletdistributionset.driver": "AUTO_AIR_DISTRIBUTE_MODE",
+      "005^1^10": "off",
+      "006^44^10": "off",
+      "005^9999^10^drivingCtl.steeringSensitivity": "sport",
+      "002^9999^10^adjust.rear.right.frontLift": 0,
+      "009^9999^10^Trip_A_E_Odo": 0.2,
+      "005^9999^10^driving.extremePass": "off",
+      "009^9999^10^bms_inner_discharge_switch": "off",
+      "001^9999^10^ac.temp.passenger": 26,
+      "007^9999^10^smartLock.childLockSwitch": "off",
+      "006^8^10": "Zero",
+      "002^9999^10^adjust.wheel.restore": "NoAction",
+      "002^9999^10^adjust.driver.back": 47,
+      "002^9999^10^adjust.third.left.back": 67,
+      "005^9999^10^driving.airSuspensionStatus": "ActionduetoIEasyload",
+      "002^9999^10^seat_heat_right_rear": "off",
+      "004^14^10": "on",
+      "005^36^10": "HEV_RANGE",
+      "007^9999^10^sound.rnc": "on",
+      "009^9999^10^charge.produce.electricity.failed.reason": 0,
+      "009^9999^10^charge.chargingPowerAndRate": "PowerAndRateData{power\\u003d\\u0027--\\u0027, chargingSpeed\\u003d\\u0027--\\u0027}",
+      "006^7^10": "Percentage",
+      "001^9999^10^ac.lock_rear": "off",
+      "002^9999^10^seat_massage_left_rear": "off",
+      "002^9999^10^seat_heat_left_third": "off",
+      "001^9999^10^ac.rear.airmode": "AUTO_AIR_DISTRIBUTE_MODE",
+      "006^9999^10^adas.aiPilotStatus": 0,
+      "002^9999^10^seat_magsite_level_driver": [
+        {
+          "mode": [],
+          "name": "全身",
+          "value": "shoulderandwaistandlowerbody"
+        },
+        {
+          "mode": [
+            {
+              "name": "全身舒展",
+              "value": "mode1"
+            },
+            {
+              "name": "推拿唤醒",
+              "value": "mode3"
+            },
+            {
+              "name": "敲揉舒压",
+              "value": "mode2"
+            },
+            {
+              "name": "揉搓活血",
+              "value": "mode4"
+            },
+            {
+              "name": "腰部古法",
+              "value": "mode5"
+            }
+          ],
+          "name": "背部",
+          "value": "shoulderandwaist"
+        },
+        {
+          "mode": [
+            {
+              "name": "美臀激活",
+              "value": "mode1"
+            },
+            {
+              "name": "轻柔猫步",
+              "value": "mode2"
+            },
+            {
+              "name": "波浪放松",
+              "value": "mode3"
+            }
+          ],
+          "name": "臀部",
+          "value": "cushion"
+        }
+      ],
+      "007^9999^10^smartLock.closeWindowWhenLock": "off",
+      "009^9999^10^recharge.battery_aging_redundant": "GOOD",
+      "004^9999^10^light.side_status": "off",
+      "009^9999^10^recharge.battery_aging_main": "GOOD",
+      "002^9999^10^adjust.third.right.back": 63,
+      "005^31^10": "off",
+      "005^10^10": "normal",
+      "004^9999^10^light.ihc": "off",
+      "009^9999^10^recharge.charging_limit": 100,
+      "007^9999^10^icebox.temp_set": -6,
+      "002^9999^10^adjust.passenger.allSeat_vert": 23,
+      "002^9999^10^adjust.rear.right.back": 43,
+      "007^9999^10^icebox.lock_hold_fridge_switch": "off",
+      "005^21^10": "HEV_RANGE",
+      "006^14^10": "High",
+      "007^9999^10^sunroof.rear_shade_percentage": 100,
+      "008^0^10": "P",
+      "007^9999^10^voice.rearRight_window_specify": 0,
+      "007^9999^10^voice.rearLeft_window_specify": 0,
+      "006^20^10": "Off",
+      "006^43^10": "on",
+      "002^9999^10^seat_heat_stone_massage_driver": "off",
+      "005^2^10": "off",
+      "002^9999^10^seat_massage_passenger": "off",
+      "007^9999^10^adjust.carSpeed": 0,
+      "002^9999^10^seat_occupnt_sts_driver": "Present",
+      "007^9999^10^smartLock.leftChildLock": "off",
+      "009^9999^10^recharge.battery_remaining": 53.1,
+      "007^9999^10^voice.frontLeft_window_specify": 100,
+      "007^9999^10^voice.frontRight_window_specify": 100,
+      "001^9999^10^ac.volume.rear": 0,
+      "006^37^10": "Recommend",
+      "002^9999^10^adjust.rear.left.back": 126,
+      "005^26^10": "off",
+      "001^9999^10^ac.front_defrost": "off",
+      "006^9999^10^system.showroom_mode": "0_Normal_Mode",
+      "004^15^10": 3,
+      "002^9999^10^adjust.driver.allSeat_vert": 100,
+      "009^9999^10^charge.produce.power": "HIGH",
+      "009^9999^10^recharge.charging_appointment_time_stop_hour": 15,
+      "004^9999^10^light.welcomeLight": "on",
+      "001^9999^10^ac.comperssor": "off",
+      "007^9999^10^quick.wiper.sensitivity": "AUTO_MODE_SENSITIVITY_LEVEL_4_HIGHEST",
+      "002^9999^10^seat_occupnt_sts_left_rear": "No_Present",
+      "007^9999^10^quick.trunk": "on",
+      "001^9999^10^ac.rear.automode": "off",
+      "004^9999^10^quick.headlightControl": "off",
+      "002^9999^10^adjust.mirror.restore": "NoAction",
+      "002^9999^10^seat.rear_left.armrest_fold": "folded",
+      "001^9999^10^ac.rear_defrost": "off",
+      "004^0^10": "off",
+      "002^9999^10^seat_heat_stone_massage_left_rear": "off",
+      "006^6^10": "DistanceLevel5",
+      "009^9999^10^CCUOffbdChrgrPlugOn": "disconnected",
+      "005^3^10": "off",
+      "001^9999^10^ac.rear.temperature": 15.5,
+      "002^9999^10^adjust.rear.left.bigLeg": 0,
+      "006^25^10": "Vibration",
+      "007^9999^10^quick.outsideMirrorExpand": "FOLD",
+      "009^9999^10^Trip_A_F_AFC": 0,
+      "005^14^10": "lowest",
+      "006^19^10": "on",
+      "007^9999^10^sunroof.shade_switch": "Stop",
+      "006^36^10": "off",
+      "005^19^10": "off",
+      "004^9999^10^light.ambientMode": "auto",
+      "007^9999^10^quick.outsideMirrorHeat": "off",
+      "002^9999^10^seat_magsite_level_right_rear": [
+        {
+          "mode": [],
+          "name": "全身",
+          "value": "shoulderandwaistandlowerbody"
+        },
+        {
+          "mode": [
+            {
+              "name": "全身舒展",
+              "value": "mode1"
+            },
+            {
+              "name": "推拿唤醒",
+              "value": "mode3"
+            },
+            {
+              "name": "敲揉舒压",
+              "value": "mode2"
+            },
+            {
+              "name": "揉搓活血",
+              "value": "mode4"
+            },
+            {
+              "name": "腰部古法",
+              "value": "mode5"
+            }
+          ],
+          "name": "背部",
+          "value": "shoulderandwaist"
+        },
+        {
+          "mode": [
+            {
+              "name": "美臀激活",
+              "value": "mode1"
+            },
+            {
+              "name": "轻柔猫步",
+              "value": "mode2"
+            },
+            {
+              "name": "波浪放松",
+              "value": "mode3"
+            }
+          ],
+          "name": "臀部",
+          "value": "cushion"
+        }
+      ],
+      "001^9999^10^ac.maxHeating": "off",
+      "007^9999^10^door.front_left_door_pwr_status": "MiddleStop",
+      "005^25^10": "on",
+      "007^9999^10^icebox.power_status": "off",
+      "007^9999^10^quick.window": "WINDOW_OFF",
+      "006^24^10": "High",
+      "009^9999^10^Trip_A_E_Time": "",
+      "001^9999^10^ac.rear.powerstatus": "off",
+      "007^9999^10^quick.outsideMirrorFold": "EXPAND",
+      "007^9999^10^connect.wirelessChargeFR": "on",
+      "001^9999^10^ac.rear_defrost_mirrorheat": "off",
+      "009^9999^10^recharge.charging_appointment_time_start_minute": 30,
+      "001^9999^10^ac.tempsync": "off",
+      "002^9999^10^seat_magsite_level_left_rear": [
+        {
+          "mode": [
+            {
+              "name": "波浪",
+              "value": "mode3"
+            },
+            {
+              "name": "猫步",
+              "value": "mode2"
+            },
+            {
+              "name": "脉冲",
+              "value": "mode1"
+            },
+            {
+              "name": "蝶形",
+              "value": "mode6"
+            },
+            {
+              "name": "交叉",
+              "value": "mode5"
+            }
+          ],
+          "name": "全背",
+          "value": "shoulderandwaist"
+        },
+        {
+          "mode": [
+            {
+              "name": "波浪",
+              "value": "mode3"
+            },
+            {
+              "name": "脉冲",
+              "value": "mode1"
+            },
+            {
+              "name": "交叉",
+              "value": "mode5"
+            }
+          ],
+          "name": "肩部",
+          "value": "shoulder"
+        },
+        {
+          "mode": [
+            {
+              "name": "波浪",
+              "value": "mode3"
+            },
+            {
+              "name": "猫步",
+              "value": "mode2"
+            }
+          ],
+          "name": "腰部",
+          "value": "waist"
+        }
+      ],
+      "006^18^10": "on",
+      "001^9999^10^ac.power": "off",
+      "002^9999^10^adjust.driver.cushion": 1,
+      "007^9999^10^icebox.ctrl_mode": "CoolingMode",
+      "002^9999^10^adjust.seat_easy_outin_passenger_setting": "off",
+      "007^9999^10^smartLock.tailgateHeight": 100,
+      "002^9999^10^seat_massage_right_rear": "off",
+      "002^9999^10^seat_occupnt_sts_passenger": "No_Present",
+      "002^9999^10^seat_heat_stone_massage_passenger": "off",
+      "008^1^10": 0,
+      "002^9999^10^seat_air_left_rear": "off",
+      "002^9999^10^seat_heat_left_rear": "off",
+      "004^9999^10^light.dipped_beam_status": "off",
+      "001^9999^10^ac.loop": "AutoRecirculation",
+      "002^9999^10^seat_heat_steering_wheel": "off",
+      "007^9999^10^smartLock.rightChildLock": "off",
+      "002^9999^10^seat_air_right_rear": "off",
+      "005^9^10": "on",
+      "004^11^10": "off",
+      "002^9999^10^adjust.seat_easy_outin_driver_setting": "off",
+      "007^9999^10^sunroof.lockAutoClose": "Disabled",
+      "006^0^10": "on",
+      "008^9999^10^car.leftFrontTirePressure": 2.92,
+      "002^9999^10^adjust.passenger.back": 45,
+      "009^9999^10^recharge.charging_appointment_time_stop_minute": 45,
+      "002^9999^10^seat.rear_right.armrest_fold": "folded",
+      "002^9999^10^adjust.driver.allSeat_hozt": 100,
+      "002^9999^10^adjust.rear.right.smallLeg": 0,
+      "008^10^10": "off",
+      "008^9999^10^car.leftRearTirePressure": 2.44,
+      "004^9999^10^light.high_beam_status": "off",
+      "009^9999^10^recharge.remaining_charging_time": "",
+      "009^9999^10^discharge.discharge_limit": 20,
+      "006^29^10": "on",
+      "002^9999^10^seat.rear_left.armrest_welcome": "on",
+      "009^9999^10^recharge.schedule_charging": "off",
+      "005^13^10": "comfort",
+      "007^9999^10^connect.wirelessCharge": "on",
+      "006^12^10": "on",
+      "002^9999^10^adjust.passenger.smallLeg": 0,
+      "001^9999^10^ac.volume.driver": 0,
+      "002^9999^10^seat_magsite_level_passenger": [
+        {
+          "mode": [
+            {
+              "name": "波浪",
+              "value": "mode3"
+            },
+            {
+              "name": "猫步",
+              "value": "mode2"
+            },
+            {
+              "name": "脉冲",
+              "value": "mode1"
+            },
+            {
+              "name": "蝶形",
+              "value": "mode6"
+            },
+            {
+              "name": "交叉",
+              "value": "mode5"
+            }
+          ],
+          "name": "全背",
+          "value": "shoulderandwaist"
+        },
+        {
+          "mode": [
+            {
+              "name": "波浪",
+              "value": "mode3"
+            },
+            {
+              "name": "脉冲",
+              "value": "mode1"
+            },
+            {
+              "name": "交叉",
+              "value": "mode5"
+            }
+          ],
+          "name": "肩部",
+          "value": "shoulder"
+        },
+        {
+          "mode": [
+            {
+              "name": "波浪",
+              "value": "mode3"
+            },
+            {
+              "name": "猫步",
+              "value": "mode2"
+            }
+          ],
+          "name": "腰部",
+          "value": "waist"
+        }
+      ],
+      "009^9999^10^CCUOnbdChrgrPlugOn": "disconnect",
+      "005^39^10": "on",
+      "009^9999^10^charging.management.full_charge_remind": "No_Request",
+      "006^46^10": "off",
+      "002^9999^10^adjust.passenger.allSeat_hozt": 85,
+      "005^24^10": "on",
+      "002^9999^10^seat_heat_driver": "off",
+      "002^9999^10^adjust.rear.right.allSeat_hozt": 100,
+      "007^9999^10^quick.ESP": "on",
+      "005^9999^10^drive.crabWalkStatus": "ManualExit",
+      "004^1^10": "off",
+      "008^9999^10^car.fuelQuantityPercent": 94.1177,
+      "007^9999^10^sunroof.rear_shade_switch": "Stop",
+      "001^9999^10^ac.temp.driver": 26,
+      "002^9999^10^adjust.rear.left.allSeat_hozt": 1,
+      "002^9999^10^seat_heat_steering_wheel_auto": "off",
+      "009^9999^10^charge.target.battery": 80,
+      "002^9999^10^seat_heat_passenger": "off",
+      "009^9999^10^Trip_A_F_Odo": 0,
+      "005^40^10": "on",
+      "002^9999^10^seat_occupnt_sts_right_rear": "No_Present",
+      "009^9999^10^recharge.charging_appointment_time_start_hour": 15,
+      "002^9999^10^seat_heat_stone_massage_right_rear": "off",
+      "005^29^10": "off",
+      "004^6^10": "normal",
+      "002^9999^10^seat_heat_right_third": "off",
+      "009^9999^10^bms_off_board_charge_mode": 0,
+      "006^9^10": "NegativeTen",
+      "008^9999^10^car.batteryVoltage": 590.5,
+      "002^9999^10^adjust.rear.left.smallLeg": 0,
+      "007^9999^10^sunroof.shade_percentage": 100,
+      "004^9999^10^light.slowWalkLamp": "on",
+      "009^9999^10^Trip_A_E_AEC": "",
+      "006^23^10": "Warning",
+      "005^9999^10^drive.crabWalk_speed": 0,
+      "008^9999^10^car.rightFrontTirePressure": 2.96,
+      "007^9999^10^carbody.power": "off",
+      "002^9999^10^seat_ventilation_passenger": "off"
+    }
+  }
+}

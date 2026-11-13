@@ -1,0 +1,7 @@
+# ECM (Engine Control Module) 发动机控制模块
+ECM_DOIP_IP = "172.31.6.1"  # ICB 网关
+ECM_DOIP_PORT = 13400
+ECM_PHYSICAL_ADDR = 0x07E0
+ECM_RESPONSE_ADDR = 0x07E0  # 通过 ICB 网关转发，响应地址=请求地址
+ECM_ROUTING_TA = 0x0000
+ECM_SECURITY_ALGO = 0x1039

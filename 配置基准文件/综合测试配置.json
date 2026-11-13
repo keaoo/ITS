@@ -1,0 +1,22 @@
+{
+  "selected_instructions": [
+    "等待",
+    "等待",
+    "等待",
+    "等待",
+    "等待",
+    "等待"
+  ],
+  "fold_path1": "C:/Users/qqd824/Downloads/新建文件夹",
+  "file_path2": "D:/Labview-project/1-2.语音控/直接注入文字/run.bat",
+  "relay_com": "未找到CH340设备",
+  "relayid1_combo": 1,
+  "relayid2_combo": 2,
+  "relayid3_combo": 3,
+  "relayid4_combo": 1,
+  "delaytime1": "10",
+  "delaytime2": "15003.0",
+  "delaytime3": "1",
+  "cycle": "1000",
+  "mode_combo": 0
+}

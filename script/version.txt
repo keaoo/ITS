@@ -1,0 +1,9 @@
+当前时间：Sun Jun 14 13:58:21 CST 2026
+系统版本：3.3.0-R-20260606.1950
+软件版本：0S31LAVN77UY26P
+版本分支：P12L_baseos_sa8295_QLA_CN_rel_260530
+MCU 版本：/bin/sh: sys-test: not found
+DSP 版本：dsp_upgrade: not found
+SN: da1a08ff
+VIN: LSJEH43C2SZ738973
+UUID: /bin/sh: findstr: not found
