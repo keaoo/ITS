@@ -64,7 +64,6 @@ class TestExecutor:
         "\u4e3b\u9a7e\u5ea7\u6905\u5176\u4ed6\u4f4d\u7f6e": "OTHER",
         "\u4e3b\u9a7e\u5ea7\u6905\u5907\u7528\u4f4d\u7f6e": "BACKUP",
         "\u4e3b\u9a7e\u5ea7\u6905\u4f11\u606f\u4f4d\u7f6e": "RESTING",
-        "\u4e3b\u9a7e\u5ea7\u6905\u8d35\u5983\u6905\u4f4d\u7f6e": "FLAT",
     }
     DRIVER_SEAT_HEATING_VALUES_8797 = {
         "\u5173\u95ed\u4e3b\u9a7e\u5ea7\u6905\u52a0\u70ed": "0",
@@ -109,13 +108,147 @@ class TestExecutor:
         "\u4e3b\u9a7e\u5ea7\u6905\u6309\u6469\u6a21\u5f0f-\u86c7\u5f62": "8",
     }
     PASSENGER_SEAT_POSITION_VALUES_8797 = {
-        "\u526f\u9a7e\u5ea7\u6905\u8d35\u5983\u6905\u4f4d\u7f6e": ("FLAT", 20),
-        "\u526f\u9a7e\u5ea7\u6905\u96f6\u91cd\u529b\u4f4d\u7f6e": ("0G", 20),
         "\u526f\u9a7e\u5ea7\u6905\u8fdb\u51fa\u4f4d\u7f6e": ("EASY_EXIT", 15),
         "\u526f\u9a7e\u5ea7\u6905\u5e38\u7528\u4f4d\u7f6e": ("COMMON", 15),
         "\u526f\u9a7e\u5ea7\u6905\u4f11\u606f\u4f4d\u7f6e": ("RESTING", 15),
         "\u526f\u9a7e\u5ea7\u6905\u5907\u7528\u4f4d\u7f6e": ("BACKUP", 15),
         "\u526f\u9a7e\u5ea7\u6905\u5176\u4ed6\u4f4d\u7f6e": ("OTHER", 15),
+    }
+    SEAT_SCENE_INSTRUCTION_NAMES_8797 = (
+        "\u9000\u51fa\u4e3b\u9a7e\u8d35\u5983\u6905",
+        "\u5f00\u542f\u4e3b\u9a7e\u8d35\u5983\u6905",
+        "\u5f00\u542f\u526f\u9a7e\u8d35\u5983\u6905",
+        "\u9000\u51fa\u526f\u9a7e\u8d35\u5983\u6905",
+        "\u5f00\u542f\u526f\u9a7e\u96f6\u91cd\u529b",
+        "\u5173\u95ed\u526f\u9a7e\u96f6\u91cd\u529b",
+        "\u5f00\u542f\u53f3\u540e\u96f6\u91cd\u529b",
+        "\u9000\u51fa\u53f3\u540e\u96f6\u91cd\u529b",
+        "\u5f00\u542f\u5de6\u540e\u96f6\u91cd\u529b",
+        "\u9000\u51fa\u5de6\u540e\u96f6\u91cd\u529b",
+        "\u56db\u4eba\u8212\u4eab\u6a21\u5f0f\u5f00\u542f",
+        "\u56db\u4eba\u8212\u4eab\u6a21\u5f0f\u5173\u95ed",
+        "\u540e\u5907\u7bb1\u6536\u7eb3\u6a21\u5f0f\u5f00\u542f",
+        "\u540e\u5907\u7bb1\u6536\u7eb3\u6a21\u5f0f\u5173\u95ed",
+    )
+    SEAT_SCENE_COMMANDS_8797 = {
+        "\u9000\u51fa\u4e3b\u9a7e\u8d35\u5983\u6905": (
+            'adb shell "vapisend -set Vehicle.Cabin.Seat.Row1.DriverSide.PositionMemory.Restore DRIVER; sleep 1; '
+            'vapisend -set Vehicle.Cabin.Seat.Row2.DriverSide.PositionMemory.Restore DEFAULT"',
+            20,
+        ),
+        "\u5f00\u542f\u4e3b\u9a7e\u8d35\u5983\u6905": (
+            'adb shell "vapisend -set Vehicle.Cabin.Seat.Row2.DriverSide.PositionMemory.Restore FLAT && '
+            'vapisend -set Vehicle.Cabin.Seat.Row1.DriverSide.PositionMemory.Restore FLAT"',
+            20,
+        ),
+        "\u5f00\u542f\u526f\u9a7e\u8d35\u5983\u6905": (
+            'adb shell "vapisend -set Vehicle.Cabin.Seat.Row2.PassengerSide.PositionMemory.Restore FLAT && '
+            'vapisend -set Vehicle.Cabin.Seat.Row1.PassengerSide.PositionMemory.Restore FLAT"',
+            20,
+        ),
+        "\u9000\u51fa\u526f\u9a7e\u8d35\u5983\u6905": (
+            'adb shell "vapisend -set Vehicle.Cabin.Seat.Row1.PassengerSide.PositionMemory.Restore COMMON; sleep 1; '
+            'vapisend -set Vehicle.Cabin.Seat.Row2.PassengerSide.PositionMemory.Restore DEFAULT"',
+            20,
+        ),
+        "\u5f00\u542f\u526f\u9a7e\u96f6\u91cd\u529b": (
+            "adb shell vapisend -set Vehicle.Cabin.Seat.Row1.PassengerSide.PositionMemory.Restore 0G",
+            38,
+        ),
+        "\u5173\u95ed\u526f\u9a7e\u96f6\u91cd\u529b": (
+            "adb shell vapisend -set Vehicle.Cabin.Seat.Row1.PassengerSide.PositionMemory.Restore COMMON",
+            38,
+        ),
+        "\u5f00\u542f\u53f3\u540e\u96f6\u91cd\u529b": (
+            "adb shell vapisend -set Vehicle.Cabin.Seat.Row2.PassengerSide.PositionMemory.Restore 0G",
+            38,
+        ),
+        "\u9000\u51fa\u53f3\u540e\u96f6\u91cd\u529b": (
+            'adb shell "vapisend -set Vehicle.Cabin.Seat.Row2.PassengerSide.PositionMemory.Restore DEFAULT && '
+            'vapisend -set Vehicle.Cabin.Seat.Row1.PassengerSide.PositionMemory.Restore COMMON"',
+            38,
+        ),
+        "\u5f00\u542f\u5de6\u540e\u96f6\u91cd\u529b": (
+            "adb shell vapisend -set Vehicle.Cabin.Seat.Row2.DriverSide.PositionMemory.Restore 0G",
+            38,
+        ),
+        "\u9000\u51fa\u5de6\u540e\u96f6\u91cd\u529b": (
+            'adb shell "vapisend -set Vehicle.Cabin.Seat.Row2.DriverSide.PositionMemory.Restore DEFAULT && '
+            'vapisend -set Vehicle.Cabin.Seat.Row1.DriverSide.PositionMemory.Restore DRIVER"',
+            38,
+        ),
+        "\u56db\u4eba\u8212\u4eab\u6a21\u5f0f\u5f00\u542f": (
+            'adb shell "vapisend -set Vehicle.Cabin.Seat.Row2.DriverSide.PositionMemory.Restore LARGE_FOUR && '
+            'vapisend -set Vehicle.Cabin.Seat.Row2.PassengerSide.PositionMemory.Restore LARGE_FOUR"',
+            30,
+        ),
+        "\u56db\u4eba\u8212\u4eab\u6a21\u5f0f\u5173\u95ed": (
+            'adb shell "vapisend -set Vehicle.Cabin.Seat.Row2.DriverSide.PositionMemory.Restore DEFAULT && '
+            'vapisend -set Vehicle.Cabin.Seat.Row2.PassengerSide.PositionMemory.Restore DEFAULT"',
+            30,
+        ),
+        "\u540e\u5907\u7bb1\u6536\u7eb3\u6a21\u5f0f\u5f00\u542f": (
+            'adb shell "vapisend -set Vehicle.Cabin.Seat.Row3.DriverSide.PositionMemory.Restore FOLD_ENTRY && '
+            'vapisend -set Vehicle.Cabin.Seat.Row3.PassengerSide.PositionMemory.Restore FOLD_ENTRY"',
+            30,
+        ),
+        "\u540e\u5907\u7bb1\u6536\u7eb3\u6a21\u5f0f\u5173\u95ed": (
+            'adb shell "vapisend -set Vehicle.Cabin.Seat.Row3.DriverSide.PositionMemory.Restore FOLD_EXIT && '
+            'vapisend -set Vehicle.Cabin.Seat.Row3.PassengerSide.PositionMemory.Restore FOLD_EXIT"',
+            30,
+        ),
+    }
+    SEAT_SCENE_COMMANDS_8797.update({
+        "\u4e3b\u9a7e\u5ea7\u6905\u8d35\u5983\u6905\u4f4d\u7f6e": SEAT_SCENE_COMMANDS_8797[
+            "\u5f00\u542f\u4e3b\u9a7e\u8d35\u5983\u6905"
+        ],
+        "\u526f\u9a7e\u5ea7\u6905\u8d35\u5983\u6905\u4f4d\u7f6e": SEAT_SCENE_COMMANDS_8797[
+            "\u5f00\u542f\u526f\u9a7e\u8d35\u5983\u6905"
+        ],
+        "\u526f\u9a7e\u5ea7\u6905\u96f6\u91cd\u529b\u4f4d\u7f6e": SEAT_SCENE_COMMANDS_8797[
+            "\u5f00\u542f\u526f\u9a7e\u96f6\u91cd\u529b"
+        ],
+    })
+    DRIVER_SEAT_POSITION_RESULT_COMMANDS_8797 = (
+        ("\u4e3b\u9a7e\u5ea7\u6905\u9760\u80cc\u4f4d\u7f6e", "adb shell vapisend -get Vehicle.Cabin.Seat.Row1.DriverSide.Backrest.ReclinePercent"),
+        ("\u4e3b\u9a7e\u5ea7\u6905\u524d\u540e\u4f4d\u7f6e", "adb shell vapisend -get Vehicle.Cabin.Seat.Row1.DriverSide.PositionPercent"),
+        ("\u4e3b\u9a7e\u5ea7\u6905\u4e0a\u4e0b\u4f4d\u7f6e", "adb shell vapisend -get Vehicle.Cabin.Seat.Row1.DriverSide.HeightPercent"),
+        ("\u4e3b\u9a7e\u5ea7\u6905\u817f\u6258\u4f4d\u7f6e", "adb shell vapisend -get Vehicle.Cabin.Seat.Row1.DriverSide.LegSupport.FoldPosition"),
+    )
+    PASSENGER_SEAT_POSITION_RESULT_COMMANDS_8797 = (
+        ("\u526f\u9a7e\u5ea7\u6905\u9760\u80cc\u4f4d\u7f6e", "adb shell vapisend -get Vehicle.Cabin.Seat.Row1.PassengerSide.Backrest.ReclinePercent"),
+        ("\u526f\u9a7e\u5ea7\u6905\u524d\u540e\u4f4d\u7f6e", "adb shell vapisend -get Vehicle.Cabin.Seat.Row1.PassengerSide.PositionPercent"),
+        ("\u526f\u9a7e\u5ea7\u6905\u4e0a\u4e0b\u4f4d\u7f6e", "adb shell vapisend -get Vehicle.Cabin.Seat.Row1.PassengerSide.HeightPercent"),
+        ("\u526f\u9a7e\u5ea7\u6905\u817f\u6258\u4f4d\u7f6e", "adb shell vapisend -get Vehicle.Cabin.Seat.Row1.PassengerSide.LegSupport.FoldPosition"),
+    )
+    LEFT_REAR_SEAT_POSITION_RESULT_COMMANDS_8797 = (
+        ("\u5de6\u540e\u5ea7\u6905\u9760\u80cc\u4f4d\u7f6e", "adb shell vapisend -get Vehicle.Cabin.Seat.Row2.DriverSide.Backrest.ReclinePercent"),
+        ("\u5de6\u540e\u5ea7\u6905\u524d\u540e\u4f4d\u7f6e", "adb shell vapisend -get Vehicle.Cabin.Seat.Row2.DriverSide.HorizontalPosition"),
+        ("\u5de6\u540e\u5ea7\u6905\u503e\u89d2", "adb shell vapisend -get Vehicle.Cabin.Seat.Row2.DriverSide.TiltPercent"),
+        ("\u5de6\u540e\u5ea7\u6905\u817f\u6258\u4f38\u7f29", "adb shell vapisend -get Vehicle.Cabin.Seat.Row2.DriverSide.LegSupport.Position"),
+    )
+    RIGHT_REAR_SEAT_POSITION_RESULT_COMMANDS_8797 = (
+        ("\u53f3\u540e\u5ea7\u6905\u9760\u80cc\u4f4d\u7f6e", "adb shell vapisend -get Vehicle.Cabin.Seat.Row2.PassengerSide.Backrest.ReclinePercent"),
+        ("\u53f3\u540e\u5ea7\u6905\u524d\u540e\u4f4d\u7f6e", "adb shell vapisend -get Vehicle.Cabin.Seat.Row2.PassengerSide.HorizontalPosition"),
+        ("\u53f3\u540e\u5ea7\u6905\u503e\u89d2", "adb shell vapisend -get Vehicle.Cabin.Seat.Row2.PassengerSide.TiltPercent"),
+        ("\u53f3\u540e\u5ea7\u6905\u817f\u6258\u4f38\u7f29", "adb shell vapisend -get Vehicle.Cabin.Seat.Row2.PassengerSide.LegSupport.Position"),
+    )
+    SEAT_SCENE_RESULT_COMMANDS_8797 = {
+        "\u9000\u51fa\u4e3b\u9a7e\u8d35\u5983\u6905": DRIVER_SEAT_POSITION_RESULT_COMMANDS_8797 + LEFT_REAR_SEAT_POSITION_RESULT_COMMANDS_8797,
+        "\u5f00\u542f\u4e3b\u9a7e\u8d35\u5983\u6905": DRIVER_SEAT_POSITION_RESULT_COMMANDS_8797 + LEFT_REAR_SEAT_POSITION_RESULT_COMMANDS_8797,
+        "\u4e3b\u9a7e\u5ea7\u6905\u8d35\u5983\u6905\u4f4d\u7f6e": DRIVER_SEAT_POSITION_RESULT_COMMANDS_8797 + LEFT_REAR_SEAT_POSITION_RESULT_COMMANDS_8797,
+        "\u5f00\u542f\u526f\u9a7e\u8d35\u5983\u6905": PASSENGER_SEAT_POSITION_RESULT_COMMANDS_8797 + RIGHT_REAR_SEAT_POSITION_RESULT_COMMANDS_8797,
+        "\u9000\u51fa\u526f\u9a7e\u8d35\u5983\u6905": PASSENGER_SEAT_POSITION_RESULT_COMMANDS_8797 + RIGHT_REAR_SEAT_POSITION_RESULT_COMMANDS_8797,
+        "\u526f\u9a7e\u5ea7\u6905\u8d35\u5983\u6905\u4f4d\u7f6e": PASSENGER_SEAT_POSITION_RESULT_COMMANDS_8797 + RIGHT_REAR_SEAT_POSITION_RESULT_COMMANDS_8797,
+        "\u5f00\u542f\u5de6\u540e\u96f6\u91cd\u529b": DRIVER_SEAT_POSITION_RESULT_COMMANDS_8797 + LEFT_REAR_SEAT_POSITION_RESULT_COMMANDS_8797,
+        "\u9000\u51fa\u5de6\u540e\u96f6\u91cd\u529b": DRIVER_SEAT_POSITION_RESULT_COMMANDS_8797 + LEFT_REAR_SEAT_POSITION_RESULT_COMMANDS_8797,
+        "\u5f00\u542f\u53f3\u540e\u96f6\u91cd\u529b": PASSENGER_SEAT_POSITION_RESULT_COMMANDS_8797 + RIGHT_REAR_SEAT_POSITION_RESULT_COMMANDS_8797,
+        "\u9000\u51fa\u53f3\u540e\u96f6\u91cd\u529b": PASSENGER_SEAT_POSITION_RESULT_COMMANDS_8797 + RIGHT_REAR_SEAT_POSITION_RESULT_COMMANDS_8797,
+        "\u5f00\u542f\u526f\u9a7e\u96f6\u91cd\u529b": PASSENGER_SEAT_POSITION_RESULT_COMMANDS_8797 + RIGHT_REAR_SEAT_POSITION_RESULT_COMMANDS_8797,
+        "\u5173\u95ed\u526f\u9a7e\u96f6\u91cd\u529b": PASSENGER_SEAT_POSITION_RESULT_COMMANDS_8797 + RIGHT_REAR_SEAT_POSITION_RESULT_COMMANDS_8797,
+        "\u526f\u9a7e\u5ea7\u6905\u96f6\u91cd\u529b\u4f4d\u7f6e": PASSENGER_SEAT_POSITION_RESULT_COMMANDS_8797 + RIGHT_REAR_SEAT_POSITION_RESULT_COMMANDS_8797,
+        "\u56db\u4eba\u8212\u4eab\u6a21\u5f0f\u5f00\u542f": LEFT_REAR_SEAT_POSITION_RESULT_COMMANDS_8797 + RIGHT_REAR_SEAT_POSITION_RESULT_COMMANDS_8797,
+        "\u56db\u4eba\u8212\u4eab\u6a21\u5f0f\u5173\u95ed": LEFT_REAR_SEAT_POSITION_RESULT_COMMANDS_8797 + RIGHT_REAR_SEAT_POSITION_RESULT_COMMANDS_8797,
     }
     PASSENGER_SEAT_HEATING_VALUES_8797 = {
         "\u5173\u95ed\u526f\u9a7e\u5ea7\u6905\u52a0\u70ed": "0",
@@ -722,6 +855,7 @@ class TestExecutor:
             *STEERING_WHEEL_HEATING_VALUES_8797,
             *DRIVING_MODE_READ_COMMANDS_8797,
             *DRIVE_AND_LOCK_READ_COMMANDS_8797,
+            *SEAT_SCENE_INSTRUCTION_NAMES_8797,
             *DRIVER_SEAT_POSITION_VALUES_8797,
             *DRIVER_SEAT_HEATING_VALUES_8797,
             *DRIVER_SEAT_VENTILATION_VALUES_8797,
@@ -4535,6 +4669,13 @@ class TestExecutor:
 
             # 在这里继续添加更多指令...
         }
+        for instruction_name in self.SEAT_SCENE_INSTRUCTION_NAMES_8797:
+            self.instructions[instruction_name] = {
+                "wait_seconds": 0,
+                "result_cmds": [],
+                "tolerance": 2,
+                "platforms": ("8797",),
+            }
         self.instructions[
             self.ELECTRIC_STEERING_WHEEL_POSITION_INSTRUCTION_NAME_8797
         ] = {
@@ -4664,7 +4805,27 @@ class TestExecutor:
         if not isinstance(config, dict):
             return config
 
-        if self.vehicle_platform == "8797" and canonical_name == "C屏下电":
+        if (
+            self.vehicle_platform == "8797"
+            and canonical_name in self.SEAT_SCENE_COMMANDS_8797
+        ):
+            execute_cmd, wait_seconds = self.SEAT_SCENE_COMMANDS_8797[canonical_name]
+            config = dict(config)
+            result_cmds = self.SEAT_SCENE_RESULT_COMMANDS_8797.get(
+                canonical_name, ()
+            )
+            config.update({
+                "execute_cmd": execute_cmd,
+                "wait_seconds": wait_seconds,
+                "result_cmds": list(result_cmds),
+                "result_parser": "sigval_value",
+                "baseline_fields": tuple(
+                    label for label, _command in result_cmds
+                ),
+                "tolerance": 2,
+                "platforms": ("8797",),
+            })
+        elif self.vehicle_platform == "8797" and canonical_name == "C屏下电":
             config = dict(config)
             config.update({
                 "execute_cmd": (
@@ -5533,7 +5694,7 @@ class TestExecutor:
                     ("前后位置", "adb shell vapisend -get Vehicle.Cabin.Seat.Row1.DriverSide.PositionPercent"),
                     ("上下位置", "adb shell vapisend -get Vehicle.Cabin.Seat.Row1.DriverSide.HeightPercent"),
                     ("抬升位置", "adb shell vapisend -get Vehicle.Cabin.Seat.Row1.DriverSide.LegSupport.FoldPosition"),
-                    ("靠背位置", "adb shell vapisend -get Vehicle.Cabin.Seat.Row1.PassengerSide.Backrest.ReclinePercent"),
+                    ("靠背位置", "adb shell vapisend -get Vehicle.Cabin.Seat.Row1.DriverSide.Backrest.ReclinePercent"),
                 ],
                 "result_parser": "sigval_value",
             })
@@ -5553,8 +5714,8 @@ class TestExecutor:
                 ),
                 "wait_seconds": wait_seconds,
                 "result_cmds": [
-                    ("前后位置", "adb shell vapisend -get Vehicle.Cabin.Seat.Row1.PassengerSide.HeightPercent"),
-                    ("上下位置", "adb shell vapisend -get Vehicle.Cabin.Seat.Row1.PassengerSide.PositionPercent"),
+                    ("前后位置", "adb shell vapisend -get Vehicle.Cabin.Seat.Row1.PassengerSide.PositionPercent"),
+                    ("上下位置", "adb shell vapisend -get Vehicle.Cabin.Seat.Row1.PassengerSide.HeightPercent"),
                     ("抬升位置", "adb shell vapisend -get Vehicle.Cabin.Seat.Row1.PassengerSide.LegSupport.FoldPosition"),
                     ("靠背位置", "adb shell vapisend -get Vehicle.Cabin.Seat.Row1.PassengerSide.Backrest.ReclinePercent"),
                 ],

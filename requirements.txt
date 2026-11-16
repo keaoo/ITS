@@ -1,0 +1,24 @@
+# GUI and packaging
+PySide6>=6.5,<7
+PyInstaller>=6,<7
+
+# Communication and device access
+pyserial>=3.5,<4
+requests>=2.31,<3
+paho-mqtt>=2,<3
+scapy>=2.5,<3
+
+# Excel and data processing
+pandas>=2,<3
+numpy>=1.24,<3
+openpyxl>=3.1,<4
+
+# Image and video processing
+opencv-python>=4.8,<5
+Pillow>=10,<13
+
+# Audio and speech
+PyAudio>=0.2.14,<0.3
+pygame>=2.5,<3
+pyttsx3>=2.90,<3
+edge-tts>=6.1,<8
