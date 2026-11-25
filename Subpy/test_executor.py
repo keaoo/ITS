@@ -46,6 +46,39 @@ class TestExecutor:
         "\u540e\u89c6\u955c\u6298\u53e0\u72b6\u6001",
         "\u540e\u89c6\u955c\u5c55\u5f00\u72b6\u6001",
     }
+    STEP_BOARD_STATUS_INSTRUCTION_NAME_8797 = "\u7535\u52a8\u8e0f\u677f\u72b6\u6001"
+    STEP_BOARD_STATUS_VALUES_8797 = {
+        "RETRCTED": "\u6536\u56de",
+        "EXTNDED": "\u4f38\u51fa",
+        "RETRCTING": "\u6536\u56de\u4e2d",
+        "EXTNDING": "\u4f38\u51fa\u4e2d",
+        "UNKNOWN": "\u672a\u77e5",
+    }
+    STEP_BOARD_RESULT_COMMANDS_8797 = (
+        (
+            "\u5de6\u4fa7\u8e0f\u677f\u72b6\u6001",
+            "adb shell vapisend -get Vehicle.Body.StepBoard.Left.Status",
+            "status",
+        ),
+        (
+            "\u5de6\u4fa7\u8e0f\u677f\u4f4d\u7f6e",
+            "adb shell vapisend -get Vehicle.Body.StepBoard.Left.PositionPercent",
+            "position",
+        ),
+        (
+            "\u53f3\u4fa7\u8e0f\u677f\u72b6\u6001",
+            "adb shell vapisend -get Vehicle.Body.StepBoard.Right.Status",
+            "status",
+        ),
+        (
+            "\u53f3\u4fa7\u8e0f\u677f\u4f4d\u7f6e",
+            "adb shell vapisend -get Vehicle.Body.StepBoard.Right.PositionPercent",
+            "position",
+        ),
+    )
+    STEP_BOARD_BASELINE_FIELDS_8797 = tuple(
+        label for label, _command, _value_type in STEP_BOARD_RESULT_COMMANDS_8797
+    )
     REAR_SHADE_INSTRUCTION_NAMES_8797 = {
         "\u6253\u5f00\u540e\u906e\u9633\u5e18",
         "\u5173\u95ed\u540e\u906e\u9633\u5e18",
@@ -494,23 +527,15 @@ class TestExecutor:
             "Vehicle.Cabin.HVAC.Station.Row2.IsAirConditioningActive",
             "false",
         ),
-        "打开后排空调出风口": (
-            "Vehicle.Cabin.HVAC.Ventilator.Row2.IsOpen",
-            "true",
-        ),
-        "关闭后排空调出风口": (
-            "Vehicle.Cabin.HVAC.Ventilator.Row2.IsOpen",
-            "false",
-        ),
     }
     HVAC_SWITCH_VALUES_8797 = {
-        "打开空调前排锁后排开关": (
-            "Vehicle.Cabin.HVAC.IsRearClimateControlLockedToForeground",
-            "true",
+        "开启后控制屏童锁": (
+            "Vehicle.Cabin.HVAC.Rear.ControlPanel.LockedRequest",
+            "LOCK",
         ),
-        "关闭空调前排锁后排开关": (
-            "Vehicle.Cabin.HVAC.IsRearClimateControlLockedToForeground",
-            "false",
+        "关闭后控制屏童锁": (
+            "Vehicle.Cabin.HVAC.Rear.ControlPanel.LockedRequest",
+            "UNLOCK",
         ),
         "打开空调经济模式": (
             "Vehicle.Cabin.HVAC.IsEconomyModeActive",
@@ -557,26 +582,26 @@ class TestExecutor:
         "后视镜折叠状态": (None, None, "Vehicle.Body.Mirrors.FoldStatus", "后视镜折叠状态"),
         "后视镜展开状态": (None, None, "Vehicle.Body.Mirrors.FoldStatus", "后视镜折叠状态"),
         "打开后遮阳帘": (
-            "Vehicle.Cabin.RearShade.ManulAdjust",
-            "OPEN",
+            "Vehicle.Cabin.RearShade.AutoAdjust",
+            "AUTO_OPEN",
             "Vehicle.Cabin.RearShade.Position",
             "后遮阳帘位置",
         ),
         "关闭后遮阳帘": (
-            "Vehicle.Cabin.RearShade.ManulAdjust",
-            "CLOSE",
+            "Vehicle.Cabin.RearShade.AutoAdjust",
+            "AUTO_CLOSE",
             "Vehicle.Cabin.RearShade.Position",
             "后遮阳帘位置",
         ),
         "打开前遮阳帘": (
-            "Vehicle.Cabin.RearShade.ManulAdjust",
-            "OPEN",
+            "Vehicle.Cabin.Sunroof.Shade.AutoAdjust",
+            "AUTO_OPEN",
             "Vehicle.Cabin.Sunroof.Shade.Position",
             "前遮阳帘位置",
         ),
         "关闭前遮阳帘": (
-            "Vehicle.Cabin.RearShade.ManulAdjust",
-            "CLOSE",
+            "Vehicle.Cabin.Sunroof.Shade.AutoAdjust",
+            "AUTO_CLOSE",
             "Vehicle.Cabin.Sunroof.Shade.Position",
             "前遮阳帘位置",
         ),
@@ -670,7 +695,7 @@ class TestExecutor:
         ),
         "关闭方向盘加热": (
             "Vehicle.Chassis.SteeringWheel.HeatingLevel",
-            "0",
+            "4",
         ),
     }
     DRIVING_MODE_READ_COMMANDS_8797 = {
@@ -703,7 +728,7 @@ class TestExecutor:
             "Vehicle.Chassis.Suspension.LevelControl.CustomSetting",
         ),
         "驾驶-超级节能开关": (
-            "驾驶-超级节能开关当前选项",
+            "驾驶-超级节能开关状态",
             "Vehicle.Powertrain.Transmission.OEMPerformanceMode",
         ),
         "驾驶-能源模式": (
@@ -714,7 +739,7 @@ class TestExecutor:
     DRIVE_AND_LOCK_READ_COMMANDS_8797 = {
         "驾驶-强制纯电开关": (
             (
-                "驾驶-强制纯电开关当前选项",
+                "驾驶-强制纯电开关状态",
                 "Vehicle.Powertrain.Hybrid.ModeSelectionRequested",
             ),
         ),
@@ -775,7 +800,7 @@ class TestExecutor:
         "驾驶-智能防滑开关": (
             (
                 "驾驶-智能防滑开关当前选项",
-                "Vehicle.ADAS.TCS.Engaged",
+                "Vehicle.ADAS.Navigation.IsRoadPreviewOn",
             ),
         ),
         "驾驶-车身稳定系统开关": (
@@ -804,6 +829,48 @@ class TestExecutor:
             (
                 "门开合力度设置状态当前选项",
                 "Vehicle.Body.Door.LeftFront.ServoAssistForce.Percentage",
+            ),
+        ),
+        "倒车后视镜下翻开关": (
+            (
+                "倒车后视镜下翻开关当前选项",
+                "Vehicle.Body.Mirrors.DriverSide.IsAutoTiltOnReverse",
+            ),
+        ),
+        "雨刮灵敏度": (
+            (
+                "雨刮灵敏度当前选项",
+                "Vehicle.Body.Windshield.Front.Wiping.Intensity",
+            ),
+        ),
+        "主驾座椅便利进出开关": (
+            (
+                "主驾座椅便利进出开关当前选项",
+                "Vehicle.Cabin.Seat.Row1.DriverSide.IsEasyEntryEnabled",
+            ),
+        ),
+        "副驾座椅便利进出开关": (
+            (
+                "副驾座椅便利进出开关当前选项",
+                "Vehicle.Cabin.Seat.Row1.PassengerSide.IsEasyEntryEnabled",
+            ),
+        ),
+        "锁车自动关闭遮阳帘开关": (
+            (
+                "锁车自动关闭遮阳帘当前选项",
+                "Vehicle.Cabin.Sunroof.Shade.IsAutoCloseOnLockEnabled",
+            ),
+        ),
+        "锁车自动关窗开关": (
+            (
+                "锁车自动关窗当前选项",
+                "Vehicle.Cabin.Door.IsAutoCloseWindowOnLockEnabled",
+            ),
+        ),
+        "信号敲一敲开关尾门": (
+            (
+                "信号敲一敲开关尾门当前选项",
+                "Vehicle.Body.Trunk.Rear.IsEWSEnabled",
             ),
         ),
     }
@@ -855,6 +922,7 @@ class TestExecutor:
             *STEERING_WHEEL_HEATING_VALUES_8797,
             *DRIVING_MODE_READ_COMMANDS_8797,
             *DRIVE_AND_LOCK_READ_COMMANDS_8797,
+            STEP_BOARD_STATUS_INSTRUCTION_NAME_8797,
             *SEAT_SCENE_INSTRUCTION_NAMES_8797,
             *DRIVER_SEAT_POSITION_VALUES_8797,
             *DRIVER_SEAT_HEATING_VALUES_8797,
@@ -2061,23 +2129,6 @@ class TestExecutor:
                 ],
                 "tolerance": 0
             },
-            "打开后排空调出风口": {
-                "execute_cmd": "adb -host shell vapisend -set ctrl.ac.rear_ventilator_status 1",
-                "wait_seconds": 2,
-                "result_cmds": [
-                    ("后排空调状态", "adb -host shell vapisend -get ctrl.ac.rear_ventilator_status"),
-                ],
-                "tolerance": 0
-            },
-            "关闭后排空调出风口": {
-                "execute_cmd": "adb -host shell vapisend -set ctrl.ac.rear_ventilator_status 2",
-                "wait_seconds": 2,
-                "result_cmds": [
-                    ("后排空调状态", "adb -host shell vapisend -get ctrl.ac.rear_ventilator_status"),
-                ],
-                "tolerance": 0
-            },
-
             "打开空调前排锁后排开关": {
                 "execute_cmd": "adb -host shell vapisend -set ctrl.ac.rear_lock 1",
                 "wait_seconds": 2,
@@ -4007,6 +4058,12 @@ class TestExecutor:
                 ],
                 "tolerance": 0
             },
+            "信号敲一敲开关尾门": {
+                "result_cmds": [],
+                "wait_seconds": 0,
+                "tolerance": 0,
+                "platforms": ("8797",),
+            },
             "智驾-驾驶辅助Pilot开关": {
                 "result_cmds": [
                     ("驾驶辅助Pilot开关状态", "adb -host shell vapisend -get ctrl.custom.536871300"),
@@ -4676,6 +4733,13 @@ class TestExecutor:
                 "tolerance": 2,
                 "platforms": ("8797",),
             }
+        for instruction_name in ("开启后控制屏童锁", "关闭后控制屏童锁"):
+            self.instructions[instruction_name] = {
+                "wait_seconds": 1,
+                "result_cmds": [],
+                "tolerance": 0,
+                "platforms": ("8797",),
+            }
         self.instructions[
             self.ELECTRIC_STEERING_WHEEL_POSITION_INSTRUCTION_NAME_8797
         ] = {
@@ -4683,6 +4747,13 @@ class TestExecutor:
             "result_cmds": [],
             "tolerance": 0,
             "platforms": ("8295", "8797"),
+        }
+        self.instructions[self.STEP_BOARD_STATUS_INSTRUCTION_NAME_8797] = {
+            "wait_seconds": 0,
+            "skip_read_wait": True,
+            "result_cmds": [],
+            "tolerance": 3,
+            "platforms": ("8797",),
         }
         self.instructions[self.MIRROR_POSITION_INSTRUCTION_NAME_8295] = {
             "wait_seconds": 0,
@@ -4777,7 +4848,28 @@ class TestExecutor:
 
     def _canonical_instruction_name(self, instruction_name):
         name = str(instruction_name or "").strip()
+        numbered_pattern = (
+            rf"^{re.escape(self.STEP_BOARD_STATUS_INSTRUCTION_NAME_8797)}\s*"
+            r"[1-9]\d*$"
+        )
+        if re.fullmatch(numbered_pattern, name):
+            return self.STEP_BOARD_STATUS_INSTRUCTION_NAME_8797
         return self.instruction_aliases.get(name, name)
+
+    def _baseline_instruction_name(self, instruction_name):
+        """返回基准身份；可重复踏板指令保留并规范化序号。"""
+        name = str(instruction_name or "").strip()
+        match = re.fullmatch(
+            rf"{re.escape(self.STEP_BOARD_STATUS_INSTRUCTION_NAME_8797)}\s*"
+            r"(?P<index>[1-9]\d*)",
+            name,
+        )
+        if match:
+            return (
+                f"{self.STEP_BOARD_STATUS_INSTRUCTION_NAME_8797} "
+                f"{int(match.group('index'))}"
+            )
+        return self._canonical_instruction_name(name)
 
     def set_vehicle_platform(self, vehicle_platform):
         """设置当前车型平台。"""
@@ -4806,6 +4898,27 @@ class TestExecutor:
             return config
 
         if (
+            self.vehicle_platform == "8797"
+            and canonical_name == self.STEP_BOARD_STATUS_INSTRUCTION_NAME_8797
+        ):
+            config = dict(config)
+            config.pop("execute_cmd", None)
+            config.update({
+                "wait_seconds": 0,
+                "skip_read_wait": True,
+                "special_type": "step_board_status",
+                "result_cmds": [
+                    (label, command)
+                    for label, command, _value_type
+                    in self.STEP_BOARD_RESULT_COMMANDS_8797
+                ],
+                "baseline_fields": self.STEP_BOARD_BASELINE_FIELDS_8797,
+                "save_baseline_fields_only": True,
+                "repeat_baseline_for_duplicates": True,
+                "tolerance": 3,
+                "platforms": ("8797",),
+            })
+        elif (
             self.vehicle_platform == "8797"
             and canonical_name in self.SEAT_SCENE_COMMANDS_8797
         ):
@@ -5056,6 +5169,8 @@ class TestExecutor:
                 ],
                 "result_parser": "sigval_value",
             })
+            if canonical_name == "驾驶-超级节能开关":
+                config["enum_switch_active_value"] = "SUPER_ECO"
         elif (
             self.vehicle_platform == "8797"
             and canonical_name in self.DRIVE_AND_LOCK_READ_COMMANDS_8797
@@ -5074,6 +5189,8 @@ class TestExecutor:
                 ],
                 "result_parser": "sigval_value",
             })
+            if canonical_name == "驾驶-强制纯电开关":
+                config["enum_switch_active_value"] = "FORCE_EV"
         elif self.vehicle_platform == "8797" and canonical_name == "踩刹车":
             config = dict(config)
             config.update({
@@ -5354,7 +5471,7 @@ class TestExecutor:
                     (
                         "主驾温度状态",
                         "adb shell vapisend -get "
-                        "Vehicle.Cabin.HVAC.Station.Row1.HardButton.DriverTemperature",
+                        "Vehicle.Cabin.HVAC.Station.Row1.Driver.Temperature",
                     ),
                     (
                         "副驾温度状态",
@@ -5376,7 +5493,7 @@ class TestExecutor:
                     (
                         "主驾温度状态",
                         "adb shell vapisend -get "
-                        "Vehicle.Cabin.HVAC.Station.Row1.HardButton.DriverTemperature",
+                        "Vehicle.Cabin.HVAC.Station.Row1.Driver.Temperature",
                     ),
                     (
                         "副驾温度状态",
@@ -5402,7 +5519,7 @@ class TestExecutor:
             config.update({
                 "execute_cmd": (
                     "adb shell vapisend -set "
-                    "Vehicle.Cabin.HVAC.Station.Row1.HardButton.DriverTemperature "
+                    "Vehicle.Cabin.HVAC.Station.Row1.Driver.Temperature "
                     f"{temperature_value}"
                 ),
                 "wait_seconds": 1,
@@ -5410,7 +5527,7 @@ class TestExecutor:
                     (
                         "主驾空调温度状态",
                         "adb shell vapisend -get "
-                        "Vehicle.Cabin.HVAC.Station.Row1.HardButton.DriverTemperature",
+                        "Vehicle.Cabin.HVAC.Station.Row1.Driver.Temperature",
                     )
                 ],
                 "result_parser": "sigval_value",
@@ -5494,11 +5611,6 @@ class TestExecutor:
             and canonical_name in self.REAR_HVAC_VALUES_8797
         ):
             signal_name, value = self.REAR_HVAC_VALUES_8797[canonical_name]
-            result_label = (
-                "后排空调开关状态"
-                if "后排空调出风口" not in canonical_name
-                else "后排出风口状态"
-            )
             config = dict(config)
             config.update({
                 "execute_cmd": (
@@ -5507,7 +5619,7 @@ class TestExecutor:
                 "wait_seconds": 1,
                 "result_cmds": [
                     (
-                        result_label,
+                        "后排空调开关状态",
                         f"adb shell vapisend -get {signal_name}",
                     )
                 ],
@@ -5564,7 +5676,7 @@ class TestExecutor:
                     (
                         "空调主驾温度",
                         "adb shell vapisend -get "
-                        "Vehicle.Cabin.HVAC.Station.Row1.HardButton.DriverTemperature",
+                        "Vehicle.Cabin.HVAC.Station.Row1.Driver.Temperature",
                     ),
                     (
                         "空调副驾温度",
@@ -5587,7 +5699,7 @@ class TestExecutor:
                     (
                         "空调主驾温度",
                         "adb shell vapisend -get "
-                        "Vehicle.Cabin.HVAC.Station.Row1.HardButton.DriverTemperature",
+                        "Vehicle.Cabin.HVAC.Station.Row1.Driver.Temperature",
                     ),
                     (
                         "空调副驾温度",
@@ -5598,9 +5710,9 @@ class TestExecutor:
             else:
                 result_cmds = [
                     (
-                        "前排锁后排状态",
+                        "后控制屏童锁状态",
                         "adb shell vapisend -get "
-                        "Vehicle.Cabin.HVAC.IsRearClimateControlLockedToForeground",
+                        "Vehicle.Cabin.HVAC.Rear.ControlPanel.LockedRequest",
                     )
                 ]
 
@@ -5649,13 +5761,21 @@ class TestExecutor:
                 result_signal = "Vehicle.Body.Mirrors.FoldStatus"
                 result_label = "\u540e\u89c6\u955c\u6298\u53e0\u72b6\u6001"
             elif canonical_name in self.REAR_SHADE_INSTRUCTION_NAMES_8797:
-                execute_signal = "Vehicle.Cabin.RearShade.ManulAdjust"
-                execute_value = "OPEN" if canonical_name.startswith("\u6253\u5f00") else "CLOSE"
+                execute_signal = "Vehicle.Cabin.RearShade.AutoAdjust"
+                execute_value = (
+                    "AUTO_OPEN"
+                    if canonical_name.startswith("\u6253\u5f00")
+                    else "AUTO_CLOSE"
+                )
                 result_signal = "Vehicle.Cabin.RearShade.Position"
                 result_label = "\u540e\u906e\u9633\u5e18\u4f4d\u7f6e"
             elif canonical_name in self.FRONT_SHADE_INSTRUCTION_NAMES_8797:
-                execute_signal = "Vehicle.Cabin.RearShade.ManulAdjust"
-                execute_value = "OPEN" if canonical_name.startswith("\u6253\u5f00") else "CLOSE"
+                execute_signal = "Vehicle.Cabin.Sunroof.Shade.AutoAdjust"
+                execute_value = (
+                    "AUTO_OPEN"
+                    if canonical_name.startswith("\u6253\u5f00")
+                    else "AUTO_CLOSE"
+                )
                 result_signal = "Vehicle.Cabin.Sunroof.Shade.Position"
                 result_label = "\u524d\u906e\u9633\u5e18\u4f4d\u7f6e"
             else:
@@ -6263,12 +6383,21 @@ class TestExecutor:
     def _baseline_key_candidates(self, instruction_name):
         names = []
         canonical_name = self._canonical_instruction_name(instruction_name)
-        alias_names = [
-            alias
-            for alias, target in self.instruction_aliases.items()
-            if target == canonical_name
-        ]
-        for name in (canonical_name, str(instruction_name or "").strip(), *alias_names):
+        baseline_name = self._baseline_instruction_name(instruction_name)
+        if baseline_name == canonical_name:
+            alias_names = [
+                alias
+                for alias, target in self.instruction_aliases.items()
+                if target == canonical_name
+            ]
+            candidate_names = (
+                canonical_name,
+                str(instruction_name or "").strip(),
+                *alias_names,
+            )
+        else:
+            candidate_names = (baseline_name,)
+        for name in candidate_names:
             if name and name not in names:
                 names.append(name)
 
@@ -7491,6 +7620,133 @@ class TestExecutor:
             print(f"命令失败: {cmd}\n错误: {e}")
             return None
 
+    def run_adb_sigval_detailed_cmd(self, cmd, config=None):
+        """严格读取 sigVal，同时保留原始返回供只读状态诊断。"""
+        config = config or {}
+        try:
+            timeout = float(config.get("read_timeout", 10))
+        except (TypeError, ValueError):
+            timeout = 10
+
+        output = ""
+        try:
+            result = subprocess.run(
+                cmd, shell=True, capture_output=True, text=True, timeout=timeout
+            )
+            output = "\n".join(
+                part.strip()
+                for part in (result.stdout, result.stderr)
+                if part and part.strip()
+            )
+            if result.returncode != 0:
+                return None, None, output, f"命令返回码为 {result.returncode}"
+            if not output:
+                return None, None, output, "返回内容为空"
+
+            plain_text = self._strip_ansi_sequences(output).replace(r'\"', '"')
+            if re.search(r"No\s+rx\s+signal", plain_text, re.IGNORECASE):
+                return None, None, output, "No rx signal"
+            if re.search(
+                r'''["']?ret["']?\s*[:=]\s*["']?NG(?:["'\s,}\]]|$)''',
+                plain_text,
+                re.IGNORECASE,
+            ):
+                return None, None, output, "ret=NG"
+
+            sig_values = []
+            for payload in self._iter_json_objects_from_text(output):
+                sig_values.extend(self._collect_sigval_payloads(payload))
+            scalar_values = [
+                value for value in sig_values
+                if not isinstance(value, (dict, list))
+            ]
+            raw_sigval = scalar_values[-1] if scalar_values else None
+
+            if raw_sigval is None:
+                match = re.search(
+                    r'''["']?sigVal["']?\s*:\s*(?:["'](?P<quoted>[^"']*)["']|(?P<plain>[^,\s}\]]+))''',
+                    plain_text,
+                    re.IGNORECASE,
+                )
+                if match:
+                    raw_sigval = (
+                        match.group("quoted")
+                        if match.group("quoted") is not None
+                        else match.group("plain")
+                    )
+
+            if raw_sigval is None:
+                return None, None, output, "未找到 sigVal"
+            if isinstance(raw_sigval, str):
+                raw_sigval = raw_sigval.strip()
+                if not raw_sigval or raw_sigval.lower() in ("null", "none"):
+                    return None, None, output, "sigVal 为空"
+
+            return self._parse_number_like(raw_sigval), raw_sigval, output, None
+        except Exception as e:
+            return None, None, output, f"读取异常: {e}"
+
+    def execute_step_board_status(self, config):
+        """只读采集左右电动踏板的状态与位置。"""
+        results = {}
+        failures = []
+        raw_outputs = []
+
+        print(">>> 只读查询: 电动踏板状态")
+        for label, command, value_type in self.STEP_BOARD_RESULT_COMMANDS_8797:
+            value, raw_sigval, raw_output, error = self.run_adb_sigval_detailed_cmd(
+                command, config
+            )
+            raw_outputs.append(
+                f"[{label}]\n{raw_output if raw_output else '(无返回内容)'}"
+            )
+
+            side = "左侧" if label.startswith("左侧") else "右侧"
+            if error:
+                results[label] = None
+                if value_type == "status":
+                    results[f"{side}踏板原始状态 sigVal"] = None
+                    results[f"{side}踏板中文状态"] = "读取失败"
+                else:
+                    results[f"{side}踏板原始位置 sigVal"] = None
+                failures.append(f"{label}: {error}")
+                continue
+
+            if value_type == "status":
+                status_value = str(value).strip().upper()
+                chinese_status = self.STEP_BOARD_STATUS_VALUES_8797.get(status_value)
+                results[f"{side}踏板原始状态 sigVal"] = raw_sigval
+                if chinese_status is None:
+                    results[label] = None
+                    results[f"{side}踏板中文状态"] = "解析失败"
+                    failures.append(f"{label}: 无法识别状态值 {raw_sigval}")
+                else:
+                    results[label] = status_value
+                    results[f"{side}踏板中文状态"] = chinese_status
+            else:
+                results[f"{side}踏板原始位置 sigVal"] = raw_sigval
+                if isinstance(value, bool) or not isinstance(value, (int, float)):
+                    results[label] = None
+                    failures.append(f"{label}: 位置不是有效数字 {raw_sigval}")
+                elif not 0 <= value <= 100:
+                    results[label] = None
+                    failures.append(f"{label}: 位置超出 0~100 范围 ({value})")
+                else:
+                    results[label] = value
+
+        results["原始 vapisend 返回内容"] = "\n\n".join(raw_outputs)
+        if failures:
+            error_text = "；".join(failures)
+            print(f"❌ 电动踏板状态读取失败: {error_text}")
+            return (
+                results,
+                config.get("tolerance", 3),
+                f"电动踏板状态读取失败: {error_text}\n"
+                f"原始 vapisend 返回内容:\n{results['原始 vapisend 返回内容']}",
+            )
+
+        return results, config.get("tolerance", 3), None
+
     def run_adb_rear_screen_power_cmd(self, cmd, config=None):
         """解析后排屏电源返回体中 PARAM 内部 JSON 的 power 字段。"""
         config = config or {}
@@ -7993,12 +8249,18 @@ class TestExecutor:
         if missing_fields:
             print(f"基准值缺少必需字段，不保存: {missing_fields}")
             return False
+        results_to_save = results
+        if config.get("save_baseline_fields_only") and required_fields:
+            results_to_save = {
+                field: results.get(field)
+                for field in required_fields
+            }
         """保存单个指令的基准"""
-        instruction_name = self._canonical_instruction_name(instruction_name)
+        instruction_name = self._baseline_instruction_name(instruction_name)
         # 检查是否有无效值
-        has_none = any(v is None for v in results.values())
+        has_none = any(v is None for v in results_to_save.values())
         if has_none:
-            print(f"❌ 基准值包含 None，不保存: {results}")
+            print(f"❌ 基准值包含 None，不保存: {results_to_save}")
             return False
         
         baselines = self.load_all_baselines()
@@ -8021,7 +8283,7 @@ class TestExecutor:
             "type": "general_test",
             "instruction": instruction_name,
             "created_at": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-            "results": results
+            "results": results_to_save
         }
         self.save_all_baselines(baselines)
         print(f"✅ :通过/基准已保存 {baseline_name}")
@@ -8132,6 +8394,9 @@ class TestExecutor:
                 current_cycle=current_cycle,
                 tolerance=config.get("tolerance", 0),
             )
+
+        if config.get("special_type") == "step_board_status":
+            return self.execute_step_board_status(config)
         
         # 1. 执行控制指令（区分继电器指令、ADB指令、纯读取指令、纯视觉指令、等待指令、截图指令）
         print(f">>> 执行: {instruction_name}")
@@ -8391,6 +8656,14 @@ class TestExecutor:
                         results[name] = None
                         print(f"  {name}: None")
                     continue
+                active_value = config.get("enum_switch_active_value")
+                if value is not None and active_value is not None:
+                    value = (
+                        "开启"
+                        if str(value).strip().upper()
+                        == str(active_value).strip().upper()
+                        else "关闭"
+                    )
                 print(f"[读取] {name} 的结果: {value}")
                 results[name] = value
                 print(f"  {name}: {value}")
@@ -8643,6 +8916,102 @@ class TestExecutor:
         
         return {"all_pass": all_pass, "details": details}
 
+    def compare_step_board_status(self, baseline, actual, tolerance=3):
+        """按左右两侧分别校验踏板状态和位置。"""
+        all_pass = True
+        details = {}
+        summary_items = []
+
+        for side in ("左侧", "右侧"):
+            status_field = f"{side}踏板状态"
+            position_field = f"{side}踏板位置"
+            actual_status = actual.get(status_field)
+            target_status = baseline.get(status_field)
+            actual_position = actual.get(position_field)
+            target_position = baseline.get(position_field)
+
+            status_pass = (
+                actual_status in self.STEP_BOARD_STATUS_VALUES_8797
+                and target_status in self.STEP_BOARD_STATUS_VALUES_8797
+                and actual_status == target_status
+            )
+            position_diff = None
+            position_pass = False
+            if (
+                not isinstance(actual_position, bool)
+                and not isinstance(target_position, bool)
+                and isinstance(actual_position, (int, float))
+                and isinstance(target_position, (int, float))
+            ):
+                position_diff = abs(actual_position - target_position)
+                position_pass = position_diff <= tolerance
+
+            details[status_field] = {
+                "status": "pass" if status_pass else "fail",
+                "baseline": target_status,
+                "actual": actual_status,
+                "msg": (
+                    "状态一致"
+                    if status_pass
+                    else f"状态不一致：目标={target_status}, 实际={actual_status}"
+                ),
+            }
+            details[position_field] = {
+                "status": "pass" if position_pass else "fail",
+                "baseline": target_position,
+                "actual": actual_position,
+                "diff": position_diff,
+                "msg": (
+                    f"位置偏差 {position_diff}，允许偏差 ±{tolerance}"
+                    if position_diff is not None
+                    else "位置值无效"
+                ),
+            }
+
+            side_pass = status_pass and position_pass
+            all_pass = all_pass and side_pass
+            side_result = "通过"
+            if not side_pass:
+                reasons = []
+                if not status_pass:
+                    reasons.append(
+                        f"状态不一致(目标={target_status},实际={actual_status})"
+                    )
+                if not position_pass:
+                    reasons.append(
+                        f"位置偏差超限(偏差={position_diff},允许±{tolerance})"
+                        if position_diff is not None
+                        else "位置读取无效"
+                    )
+                side_result = f"失败（{'；'.join(reasons)}）"
+
+            actual[f"{side}踏板目标位置"] = target_position
+            actual[f"{side}踏板位置偏差"] = position_diff
+            actual[f"{side}踏板校验结果"] = side_result
+            details[f"{side}踏板校验结果"] = {
+                "status": "pass" if side_pass else "fail",
+                "msg": side_result,
+            }
+
+            summary_items.extend([
+                f"{side}踏板原始状态 sigVal={actual.get(f'{side}踏板原始状态 sigVal')}",
+                f"{side}踏板中文状态={actual.get(f'{side}踏板中文状态')}",
+                f"{side}踏板原始位置 sigVal={actual.get(f'{side}踏板原始位置 sigVal')}",
+                f"{side}踏板目标位置={target_position}",
+                f"{side}踏板位置偏差={position_diff}",
+                f"{side}踏板校验结果={side_result}",
+            ])
+
+        raw_output = actual.get("原始 vapisend 返回内容", "")
+        summary = "；".join(summary_items)
+        if raw_output:
+            summary += f"\n原始 vapisend 返回内容:\n{raw_output}"
+        return {
+            "all_pass": all_pass,
+            "details": details,
+            "summary": summary,
+        }
+
     def _format_exact_compare_value(self, name, value):
         if name == "语音服务开关状态":
             if "/ON/" in value:
@@ -8670,10 +9039,11 @@ class TestExecutor:
         执行 → 采集 → 判断 → 截图（失败时）→ 返回结果
         :param is_baseline_test: 是否是基准测试
         """
+        baseline_instruction_name = self._baseline_instruction_name(instruction_name)
         instruction_name = self._canonical_instruction_name(instruction_name)
         config = self._get_instruction_config(instruction_name)
         self.last_execution_detail = {
-            "instruction": instruction_name,
+            "instruction": baseline_instruction_name,
             "cycle": current_cycle,
             "actual": None,
             "baseline": None,
@@ -8740,11 +9110,11 @@ class TestExecutor:
         if is_wait_only:
             total_wait = self.sleep_wake_delay
             # 检查是否有基准（基准测试保存空结果）
-            baseline = self.get_baseline(instruction_name)
+            baseline = self.get_baseline(baseline_instruction_name)
             if is_baseline_test:
                 # 基准测试：首次执行自动保存空基准
                 if not baseline:
-                    self.save_baseline(instruction_name, {})
+                    self.save_baseline(baseline_instruction_name, {})
                 return f"✅基准已保存|第{current_cycle}次循环,等待{total_wait}s"
             else:
                 # 循环测试：等待完成，直接成功
@@ -8862,13 +9232,26 @@ class TestExecutor:
                 return f"✅亮屏正常|{result_text}"
         
         # 2. 读取基准
-        baseline = self.get_baseline(instruction_name)
+        baseline = self.get_baseline(baseline_instruction_name)
         self.last_execution_detail["baseline"] = baseline
         if not baseline:
             # 没有基准，只显示结果
             result_text = " ".join([f"{k}:{v}" for k, v in actual_results.items()])
             self.last_execution_detail["details"] = {"message": "无基准"}
             return f"⚠️无基准|{result_text}"
+
+        if config.get("special_type") == "step_board_status":
+            compare_result = self.compare_step_board_status(
+                baseline, actual_results, tolerance
+            )
+            all_pass = compare_result["all_pass"]
+            self.last_execution_detail.update({
+                "actual": actual_results,
+                "details": compare_result["details"],
+                "all_pass": all_pass,
+            })
+            prefix = "✅通过" if all_pass else "❌失败"
+            return f"{prefix}|{compare_result['summary']}"
         
         # 3. 和基准对比
         compare_result = self.compare_results(
@@ -8913,6 +9296,7 @@ class TestExecutor:
         """测试入口
         extra_wait: 额外等待时间（从界面输入）
         """
+        baseline_instruction_name = self._baseline_instruction_name(instruction_name)
         instruction_name = self._canonical_instruction_name(instruction_name)
         config = self._get_instruction_config(instruction_name)
         is_screenshot = config.get("is_screenshot", False)
@@ -8934,8 +9318,8 @@ class TestExecutor:
         if is_screenshot:
             ok = actual_results.get("_screenshot_ok", False)
             info = actual_results.get("_screenshot_info", "")
-            if not self.has_baseline(instruction_name):
-                self.save_baseline(instruction_name, {})  # 空基准
+            if not self.has_baseline(baseline_instruction_name):
+                self.save_baseline(baseline_instruction_name, {})  # 空基准
             if ok:
                 return {
                     "status": "pass",
@@ -8958,8 +9342,8 @@ class TestExecutor:
             }
         
         # 第一次执行 → 存基准
-        if not self.has_baseline(instruction_name):
-            save_ok = self.save_baseline(instruction_name, actual_results)
+        if not self.has_baseline(baseline_instruction_name):
+            save_ok = self.save_baseline(baseline_instruction_name, actual_results)
             if save_ok:
                 return {
                     "status": "baseline_created",
@@ -8974,18 +9358,26 @@ class TestExecutor:
                 }
         
         # 非第一次 → 对比
-        baseline = self.get_baseline(instruction_name)
-        compare_result = self.compare_results(
-            baseline,
-            actual_results,
-            tolerance,
-            config.get("exact_compare_fields", []),
-            config.get("value_normalizer")
-        )
+        baseline = self.get_baseline(baseline_instruction_name)
+        if config.get("special_type") == "step_board_status":
+            compare_result = self.compare_step_board_status(
+                baseline, actual_results, tolerance
+            )
+        else:
+            compare_result = self.compare_results(
+                baseline,
+                actual_results,
+                tolerance,
+                config.get("exact_compare_fields", []),
+                config.get("value_normalizer")
+            )
         
         return {
             "status": "pass" if compare_result["all_pass"] else "fail",
-            "message": "测试通过" if compare_result["all_pass"] else "存在偏差",
+            "message": compare_result.get(
+                "summary",
+                "测试通过" if compare_result["all_pass"] else "存在偏差",
+            ),
             "baseline": baseline,
             "actual": actual_results,
             "details": compare_result["details"],
@@ -8994,11 +9386,12 @@ class TestExecutor:
     
     def reset_baseline(self, instruction_name, extra_wait=0):
         """重新采集指定指令的基准"""
+        baseline_instruction_name = self._baseline_instruction_name(instruction_name)
         instruction_name = self._canonical_instruction_name(instruction_name)
         actual_results, _, error = self.execute_and_collect(instruction_name, extra_wait)
         if error:
             return False, error
-        self.save_baseline(instruction_name, actual_results)
+        self.save_baseline(baseline_instruction_name, actual_results)
         return True, "基准已更新"
     
     def get_all_instruction_names(self, vehicle_platform="8295"):

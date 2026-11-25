@@ -1760,7 +1760,7 @@ _AC_TEMPERATURE_INSTRUCTION_NAMES = {
     "\u526f\u9a7e\u7a7a\u8c03\u6e29\u5ea6\u8c03\u8282\u5230\u0032\u0035\u5ea6",
 }
 _AC_TEMPERATURE_VERIFY_SIGNALS = [
-    ("\u4e3b\u9a7e\u6e29\u5ea6", "adb shell vapisend -get Vehicle.Cabin.HVAC.Station.Row1.HardButton.DriverTemperature", 0),
+    ("\u4e3b\u9a7e\u6e29\u5ea6", "adb shell vapisend -get Vehicle.Cabin.HVAC.Station.Row1.Driver.Temperature", 0),
     ("\u526f\u9a7e\u6e29\u5ea6", "adb shell vapisend -get Vehicle.Cabin.HVAC.Station.Row1.Passenger.Temperature", 0),
 ]
 _AC_SYNC_INSTRUCTION_NAMES = {"\u6253\u5f00\u6e29\u5ea6\u540c\u6b65", "\u5173\u95ed\u6e29\u5ea6\u540c\u6b65"}

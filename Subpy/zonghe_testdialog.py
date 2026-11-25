@@ -128,6 +128,9 @@ class ZongheTestDialog(QDialog):
         zhiling_group = QGroupBox("指令选择")
         zhiling_layout = QVBoxLayout()
         self.selector = ListSelector(left_items=[], insert_after_selected_right=True)
+        self.selector.set_numbered_repeat_items({
+            self.test_executor.STEP_BOARD_STATUS_INSTRUCTION_NAME_8797,
+        })
         zhiling_layout.addWidget(self.selector)
         
         combo_btn_layout = QHBoxLayout()
@@ -376,7 +379,7 @@ class ZongheTestDialog(QDialog):
         self._baseline_total_count = 0
 
     def _unique_baseline_instructions(self, instructions):
-        """基准采集只需要每条指令执行一次，按别名规范化后去重。"""
+        """基准默认按指令去重，允许重复采集的指令保留全部实例。"""
         unique = []
         seen = set()
         duplicate_count = 0
@@ -385,11 +388,17 @@ class ZongheTestDialog(QDialog):
             if not name:
                 continue
             canonical = self.test_executor._canonical_instruction_name(name)
-            if canonical in seen:
+            baseline_name = self.test_executor._baseline_instruction_name(name)
+            config = self.test_executor._get_instruction_config(canonical)
+            repeat_baseline = (
+                isinstance(config, dict)
+                and config.get("repeat_baseline_for_duplicates", False)
+            )
+            if canonical in seen and not repeat_baseline:
                 duplicate_count += 1
                 continue
             seen.add(canonical)
-            unique.append(canonical)
+            unique.append(baseline_name if repeat_baseline else canonical)
         return unique, duplicate_count
     
     def run_batch_test(self, auto_start_cycle=False):

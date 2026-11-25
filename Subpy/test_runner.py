@@ -384,8 +384,9 @@ class TestRunner(QObject):
         log_lines = [f"[{now}] 第{cycle}次循环 - {cmd_name}: {result}\n"]
 
         detail = getattr(self.test_executor, "last_execution_detail", None)
+        baseline_cmd_name = self.test_executor._baseline_instruction_name(cmd_name)
         canonical_cmd_name = self.test_executor._canonical_instruction_name(cmd_name)
-        if isinstance(detail, dict) and detail.get("instruction") == canonical_cmd_name:
+        if isinstance(detail, dict) and detail.get("instruction") == baseline_cmd_name:
             import json
 
             def dump_value(value):

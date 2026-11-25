@@ -12741,6 +12741,10 @@ class NotepadApp(QMainWindow):
         """打开综合压测子界面"""
         from Subpy.zonghe_testdialog import ZongheTestDialog
         old_dialog = getattr(self, 'zonghe_dialog', None)
+        if old_dialog is not None and old_dialog.isVisible():
+            old_dialog.raise_()
+            old_dialog.activateWindow()
+            return
         if old_dialog is not None and getattr(old_dialog, 'baseline_worker', None):
             if old_dialog.baseline_worker.isRunning():
                 if not hasattr(self, '_background_baseline_dialogs'):
@@ -12773,26 +12777,34 @@ class NotepadApp(QMainWindow):
                 getattr(self, 'keep_scene_items', [])
             )
 
-        # 🎯 用exec()打开模态对话框，阻塞直到关闭
-        self.zonghe_dialog.exec()
-        auto_start_cycle = bool(getattr(self.zonghe_dialog, '_auto_cycle_ready', False))
+        dialog = self.zonghe_dialog
+        dialog.finished.connect(
+            lambda _result, current_dialog=dialog: self._on_zonghe_dialog_finished(
+                current_dialog
+            )
+        )
+        # 基准日志输出到主窗口；使用非模态窗口，执行期间仍可拖动日志分栏。
+        dialog.show()
+        dialog.raise_()
+        dialog.activateWindow()
 
-        # 🎯 对话框关闭后再保存所有参数 - 既要更新config，也要更新成员变量
-        self.selected_items = self.zonghe_dialog.selector.get_selected_items()
-        self.keep_scene_items = self.zonghe_dialog.selector.get_keep_scene_items()
+    def _save_zonghe_dialog_settings(self, dialog):
+        """保存刚关闭的综合压测窗口参数。"""
+        self.selected_items = dialog.selector.get_selected_items()
+        self.keep_scene_items = dialog.selector.get_keep_scene_items()
 
-        self.testfold_path = self.zonghe_dialog.fold_path1.text()
-        self.heipinglog_path = self.zonghe_dialog.file_path2.text()
-        self.relay_com_port = self.zonghe_dialog.relay_com.currentText()
-        self.relayID_qianjin = self.zonghe_dialog.relayid1_combo.currentText()
-        self.relayID_houtui = self.zonghe_dialog.relayid2_combo.currentText()
-        self.relayID_zhanzuo = self.zonghe_dialog.relayid3_combo.currentText()
-        self.relayID_shache = self.zonghe_dialog.relayid4_combo.currentText()
-        self.delaytime_1 = self.zonghe_dialog.delaytime1.text()
-        self.delaytime_2 = self.zonghe_dialog.delaytime2.text()
-        self.delaytime_3 = self.zonghe_dialog.delaytime3.text()
-        self.testcycle = self.zonghe_dialog.cycle.text()
-        self.testmode = self.zonghe_dialog.mode_combo.currentText()
+        self.testfold_path = dialog.fold_path1.text()
+        self.heipinglog_path = dialog.file_path2.text()
+        self.relay_com_port = dialog.relay_com.currentText()
+        self.relayID_qianjin = dialog.relayid1_combo.currentText()
+        self.relayID_houtui = dialog.relayid2_combo.currentText()
+        self.relayID_zhanzuo = dialog.relayid3_combo.currentText()
+        self.relayID_shache = dialog.relayid4_combo.currentText()
+        self.delaytime_1 = dialog.delaytime1.text()
+        self.delaytime_2 = dialog.delaytime2.text()
+        self.delaytime_3 = dialog.delaytime3.text()
+        self.testcycle = dialog.cycle.text()
+        self.testmode = dialog.mode_combo.currentText()
 
         # 同时也更新config
         self.config['testfold_path'] = self.testfold_path
@@ -12810,8 +12822,12 @@ class NotepadApp(QMainWindow):
 
         self.save_config()
 
-        if auto_start_cycle and not getattr(self.zonghe_dialog, '_auto_cycle_start_scheduled', False):
-            self.zonghe_dialog._auto_cycle_start_scheduled = True
+    def _on_zonghe_dialog_finished(self, dialog):
+        """保存非模态窗口参数，并按需继续启动循环测试。"""
+        self._save_zonghe_dialog_settings(dialog)
+        auto_start_cycle = bool(getattr(dialog, '_auto_cycle_ready', False))
+        if auto_start_cycle and not getattr(dialog, '_auto_cycle_start_scheduled', False):
+            dialog._auto_cycle_start_scheduled = True
             self.append_log("✅ 基准保存完成，正在自动开始循环测试")
             QTimer.singleShot(0, self._start_cycle_after_baseline)
 
@@ -13521,7 +13537,19 @@ class NotepadApp(QMainWindow):
         scrollbar = self.text_edit1.verticalScrollBar()
         if scrollbar:
             scrollbar.setValue(scrollbar.maximum())
-        self.text_edit1.ensureCursorVisible()
+        if getattr(self, '_log_scroll_pending', False):
+            return
+        self._log_scroll_pending = True
+        QTimer.singleShot(0, self._finish_scroll_log_to_bottom)
+
+    def _finish_scroll_log_to_bottom(self):
+        """等待日志布局更新后，再滚动到最终的底部位置。"""
+        self._log_scroll_pending = False
+        if not hasattr(self, 'text_edit1'):
+            return
+        scrollbar = self.text_edit1.verticalScrollBar()
+        if scrollbar:
+            scrollbar.setValue(scrollbar.maximum())
 
     def append_log(self, text):
         self.text_edit1.append(text)

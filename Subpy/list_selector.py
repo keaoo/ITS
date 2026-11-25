@@ -20,6 +20,7 @@ class ListSelector(QWidget):
     def __init__(self, left_items=None, insert_after_selected_right=False):
         super().__init__()
         self.all_items = []
+        self.numbered_repeat_items = set()
         self.insert_after_selected_right = insert_after_selected_right
         self.init_ui()
 
@@ -44,7 +45,8 @@ class ListSelector(QWidget):
         layout.setSpacing(6)
 
         label = QLabel(str(text))
-        label.setTextInteractionFlags(Qt.TextSelectableByMouse)
+        # 让标签区域的单击交给列表处理，保证整行都能正常选中。
+        label.setAttribute(Qt.WA_TransparentForMouseEvents, True)
         checkbox = QCheckBox()
         checkbox.setChecked(bool(keep_scene))
 
@@ -81,6 +83,55 @@ class ListSelector(QWidget):
         widget = self.right_list.itemWidget(item)
         checkbox = widget.findChild(QCheckBox) if widget else None
         return bool(checkbox and checkbox.isChecked())
+
+    def set_numbered_repeat_items(self, items):
+        """设置需要在右侧按出现顺序自动编号的可重复指令。"""
+        self.numbered_repeat_items = {
+            str(item).strip() for item in (items or []) if str(item).strip()
+        }
+        self._renumber_repeat_items()
+
+    def _numbered_repeat_base(self, text):
+        text = str(text or "").strip()
+        for base in self.numbered_repeat_items:
+            if text == base:
+                return base
+            if text.startswith(f"{base} "):
+                suffix = text[len(base):].strip()
+                if suffix.isdigit() and int(suffix) > 0:
+                    return base
+        return ""
+
+    def _set_right_item_text(self, row, text):
+        item = self.right_list.item(row)
+        if item is None:
+            return
+        item.setData(Qt.UserRole, str(text))
+        widget = self.right_list.itemWidget(item)
+        label = widget.findChild(QLabel) if widget else None
+        if label:
+            label.setText(str(text))
+            item.setSizeHint(widget.sizeHint())
+
+    def _renumber_repeat_items(self):
+        counters = {base: 0 for base in self.numbered_repeat_items}
+        for row in range(self.right_list.count()):
+            base = self._numbered_repeat_base(self._right_item_text(row))
+            if not base:
+                continue
+            counters[base] += 1
+            self._set_right_item_text(row, f"{base} {counters[base]}")
+
+    def _numbered_right_text(self, text):
+        base = self._numbered_repeat_base(text)
+        if not base:
+            return str(text)
+        count = sum(
+            1
+            for row in range(self.right_list.count())
+            if self._numbered_repeat_base(self._right_item_text(row)) == base
+        )
+        return f"{base} {count + 1}"
 
     def set_vehicle_platform(self, platform):
         """设置左侧可选指令的平台显示名称。"""
@@ -200,13 +251,16 @@ class ListSelector(QWidget):
         last_row = -1
 
         for item in items:
+            right_text = self._numbered_right_text(item.text())
             if insert_row >= 0:
                 insert_row += 1
-                self._insert_right_item(insert_row, item.text())
+                self._insert_right_item(insert_row, right_text)
                 last_row = insert_row
             else:
-                self._insert_right_item(-1, item.text())
+                self._insert_right_item(-1, right_text)
                 last_row = self.right_list.count() - 1
+
+        self._renumber_repeat_items()
 
         if last_row >= 0:
             self.right_list.setCurrentRow(last_row)
@@ -217,7 +271,8 @@ class ListSelector(QWidget):
         """把左侧全部项加入右侧。"""
         for i in range(self.left_list.count()):
             item = self.left_list.item(i)
-            self._insert_right_item(-1, item.text())
+            self._insert_right_item(-1, self._numbered_right_text(item.text()))
+        self._renumber_repeat_items()
         self.update_labels()
 
     def remove_selected(self):
@@ -225,6 +280,7 @@ class ListSelector(QWidget):
         rows = sorted({self.right_list.row(item) for item in self.right_list.selectedItems()}, reverse=True)
         for row in rows:
             self.right_list.takeItem(row)
+        self._renumber_repeat_items()
         self.update_labels()
 
     def remove_all(self):
@@ -240,6 +296,7 @@ class ListSelector(QWidget):
             keep_scene = self._right_item_keep_scene(current_row)
             self.right_list.takeItem(current_row)
             self._insert_right_item(current_row - 1, text, keep_scene)
+            self._renumber_repeat_items()
             self.right_list.setCurrentRow(current_row - 1)
         self.update_labels()
 
@@ -251,6 +308,7 @@ class ListSelector(QWidget):
             keep_scene = self._right_item_keep_scene(current_row)
             self.right_list.takeItem(current_row)
             self._insert_right_item(current_row + 1, text, keep_scene)
+            self._renumber_repeat_items()
             self.right_list.setCurrentRow(current_row + 1)
         self.update_labels()
 
@@ -282,9 +340,11 @@ class ListSelector(QWidget):
         if isinstance(items, list) and items:
             available_items = set(self.all_items)
             for item in items:
-                text = str(item)
-                if text in available_items:
-                    self._insert_right_item(-1, text)
+                text = str(item).strip()
+                base = self._numbered_repeat_base(text)
+                if text in available_items or base in available_items:
+                    self._insert_right_item(-1, self._numbered_right_text(text))
+            self._renumber_repeat_items()
         self.update_labels()
 
     def filter_items(self):
