@@ -176,5 +176,11 @@ def validate_spec():
 
 
 if __name__ == '__main__':
+    # GitHub-hosted Windows runners may use a non-Unicode console encoding.
+    # Keep validation output readable when it contains the project's Chinese names.
+    if hasattr(sys.stdout, 'reconfigure'):
+        sys.stdout.reconfigure(encoding='utf-8')
+    if hasattr(sys.stderr, 'reconfigure'):
+        sys.stderr.reconfigure(encoding='utf-8')
     success = validate_spec()
     sys.exit(0 if success else 1)
