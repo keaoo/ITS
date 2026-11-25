@@ -107,23 +107,28 @@ def validate_spec():
     
     # 6. 检查依赖
     print("6. 检查 Python 依赖...")
-    required_packages = [
-        'PySide6',
-        'pandas',
-        'numpy',
-        'openpyxl',
-        'pyserial',
-        'cv2',
-        'pygame',
-        'pyttsx3',
-        'edge_tts',
-        'PyInstaller',
-    ]
+    required_packages = {
+        'PySide6': 'PySide6',
+        'pandas': 'pandas',
+        'numpy': 'numpy',
+        'openpyxl': 'openpyxl',
+        'pyserial': 'serial',
+        'requests': 'requests',
+        'paho-mqtt': 'paho.mqtt.client',
+        'scapy': 'scapy',
+        'opencv-python': 'cv2',
+        'Pillow': 'PIL',
+        'PyAudio': 'pyaudio',
+        'pygame': 'pygame',
+        'pyttsx3': 'pyttsx3',
+        'edge-tts': 'edge_tts',
+        'PyInstaller': 'PyInstaller',
+    }
     
     missing = []
-    for package in required_packages:
+    for package, import_name in required_packages.items():
         try:
-            __import__(package.replace('-', '_'))
+            __import__(import_name)
             print(f"  [OK] {package}")
         except ImportError:
             print(f"  [FAIL] {package} (缺失)")

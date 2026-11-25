@@ -3,6 +3,12 @@
 #### 介绍
 ITS自动化测试系统开发，多人同时开发
 
+#### GitHub 自动构建
+
+代码推送到 `main` 分支后，GitHub Actions 会自动在 Windows 环境中打包程序。也可以进入仓库的 `Actions` 页面，选择 `Build Windows application`，点击 `Run workflow` 手动触发。
+
+构建完成后，打开对应的运行记录，在页面底部的 `Artifacts` 区域下载 `ITS-Windows-x64-运行编号`。解压其中的 `ITS-Windows-x64.zip`，再解压并运行 `ITS 智能座舱测试系统.exe`。构建产物保留 14 天，目标电脑不需要安装 Python，但仍需具备程序所使用的 ADB、驱动和车辆网络环境。
+
 #### 软件架构
 软件架构说明
 
