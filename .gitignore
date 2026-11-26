@@ -20,6 +20,7 @@ dist/
 *.7z
 *.zip
 *.log
+ui-test-output/
 
 # Local secrets and machine-specific runtime state
 key/

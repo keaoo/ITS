@@ -50,6 +50,20 @@ jobs:
         shell: pwsh
         run: python -m PyInstaller --clean --noconfirm ITS.spec
 
+      - name: Run UI smoke test
+        shell: pwsh
+        run: python ui_smoke_test.py --executable "dist\ITS 智能座舱测试系统\ITS 智能座舱测试系统.exe"
+
+      - name: Upload UI smoke-test artifacts
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: ITS-UI-smoke-${{ github.run_number }}
+          path: ui-test-output
+          if-no-files-found: warn
+          retention-days: 14
+          compression-level: 0
+
       - name: Verify packaged application
         shell: pwsh
         run: |
